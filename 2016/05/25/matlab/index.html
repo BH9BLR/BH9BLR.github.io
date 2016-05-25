@@ -1,0 +1,576 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="#基本画图
+##画图的线型 各种颜色意义
+
+颜色&amp;#39;r&amp;#39; 红色 &amp;#39;m&amp;#39; 粉红 &amp;#39;g&amp;#39; 绿色 &amp;#39;c&amp;#39; 青色 &amp;#39;b&amp;#39; 兰色 &amp;#39;w&amp;#39; 白色  &amp;#39;y&amp;#39; 黄色 &amp;#39;k&amp;#39; 黑色
+各种线型属性选项&amp;#39;-&amp;#39; 实线 &amp;#39;--&amp;#39; 虚线 &amp;#39;:&amp;#39; 点线 &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BH9BLR Home">
+<meta property="og:url" content="http://yoursite.com/2016/05/25/matlab/index.html">
+<meta property="og:site_name" content="BH9BLR Home">
+<meta property="og:description" content="#基本画图
+##画图的线型 各种颜色意义
+
+颜色&amp;#39;r&amp;#39; 红色 &amp;#39;m&amp;#39; 粉红 &amp;#39;g&amp;#39; 绿色 &amp;#39;c&amp;#39; 青色 &amp;#39;b&amp;#39; 兰色 &amp;#39;w&amp;#39; 白色  &amp;#39;y&amp;#39; 黄色 &amp;#39;k&amp;#39; 黑色
+各种线型属性选项&amp;#39;-&amp;#39; 实线 &amp;#39;--&amp;#39; 虚线 &amp;#39;:&amp;#39; 点线 &amp;">
+<meta property="og:updated_time" content="2016-05-25T08:04:46.640Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BH9BLR Home">
+<meta name="twitter:description" content="#基本画图
+##画图的线型 各种颜色意义
+
+颜色&amp;#39;r&amp;#39; 红色 &amp;#39;m&amp;#39; 粉红 &amp;#39;g&amp;#39; 绿色 &amp;#39;c&amp;#39; 青色 &amp;#39;b&amp;#39; 兰色 &amp;#39;w&amp;#39; 白色  &amp;#39;y&amp;#39; 黄色 &amp;#39;k&amp;#39; 黑色
+各种线型属性选项&amp;#39;-&amp;#39; 实线 &amp;#39;--&amp;#39; 虚线 &amp;#39;:&amp;#39; 点线 &amp;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title>  | BH9BLR Home </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">BH9BLR Home</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Accueil
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posté le</span>
+            <time itemprop="dateCreated" datetime="2016-05-25T16:03:17+08:00" content="2016-05-25">
+              2016-05-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#基本画图</p>
+<p>##画图的线型 各种颜色意义</p>
+<ul>
+<li>颜色<br><code>&#39;r&#39; 红色 &#39;m&#39; 粉红 &#39;g&#39; 绿色 &#39;c&#39; 青色 &#39;b&#39; 兰色 &#39;w&#39; 白色  &#39;y&#39; 黄色 &#39;k&#39; 黑色</code></li>
+<li>各种线型属性选项<br><code>&#39;-&#39; 实线 &#39;--&#39; 虚线 &#39;:&#39; 点线 &#39;-.&#39; 点划线</code></li>
+<li>各种标记点属性选项<br><code>&#39;.&#39; 用点号绘制各数据点 &#39;^&#39; 用上三角绘制各数据点 &#39;+&#39; 用&#39;+&#39;号绘制各数据点 &#39;v&#39; 用下三角绘制各数据点
+&#39;*&#39; 用&#39;*&#39;号绘制各数据点 &#39;&amp;gt;&#39; 用右三角绘制各数据点 &#39; .&#39; 用&#39;.&#39;号绘制各数据点 &#39;&amp;lt;&#39; 用左三角绘制各数据点
+&#39;s&#39;或squar 用正方形绘制各数据点&#39;p&#39; 用五角星绘制各数据点 &#39;d&#39;或diamond用菱形绘制各数据点 &#39;h&#39; 用六角星绘制各数据点</code></li>
+</ul>
+<p>这些选项可以连在一起用,如:’-.g’表示绘制绿色的点划线,’g+’表示用绿色的’+’号绘制曲线.</p>
+<ul>
+<li>注意:1)表示属性的符号必须放在同一个字符串中; 2)可同时指定2~3个属性; 3)与先后顺序无关; 4)指定的属性中,同一种属性不能有两个以上.<br>线宽和图标大小</li>
+</ul>
+<p>LineWidth’, 1, ‘MarkerSize’, 8</p>
+<ul>
+<li>可以设置的字体：　　‘FontName’,’隶书’ 　　‘FontName’,’宋体’ 　　‘FontName’,’Times New Roman’<br>set(h1,’color’,’r’) % 设置线型<br>% set(h1,’Marker’,’*’) % 设置线型<br>% set(h1,’MarkerSize’,2) % 设置线型<br>% set(h2,’MarkerSize’,2) </li>
+</ul>
+<p>##普通图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">xxx=[10 13 16 19 22 25 28 31 34]</span><br><span class="line">minnodes = [10 13 16 19 22 22 22 22 22 ]</span><br><span class="line">% plot(xxx,macmac01,&apos;k-*&apos;,xxx,macmac02,&apos;k-p&apos;,xxx,macmac03,&apos;k-^&apos;,xxx,macmac04,&apos;k-.&apos;,xxx,macmac05,&apos;k-s&apos;,xxx,800000,&apos;r-p&apos;,&apos;LineWidth&apos;, 1, &apos;MarkerSize&apos;, 8)</span><br><span class="line">%hold on</span><br><span class="line">%hold off</span><br><span class="line">plot(xxx,minnodes,&apos;k-^&apos;,xxx,xxx,&apos;k-p&apos;,&apos;LineWidth&apos;, 1, &apos;MarkerSize&apos;, 8)</span><br><span class="line">xlabel(&apos;number of active BK stations&apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14)</span><br><span class="line">ylabel(&apos;admited stations&apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14)</span><br><span class="line">%axis([8, 36, 5, 40])</span><br><span class="line">h=legend(&apos;Admission control&apos;,&apos;IEEE 802.11 DCF&apos;,&apos;minimum throughput requirement&apos;,0)</span><br><span class="line">% grid</span><br><span class="line">set(gca,&apos;box&apos;,&apos;off&apos;);</span><br><span class="line">set(h,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14);</span><br><span class="line">%saveas(gcf,&apos;03标准业务排队时延&apos;,&apos;jpg&apos;);</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line">## CDF画图</span><br><span class="line">```                                                                                                                 </span><br><span class="line">[h1 x1]=cdfplot(apwin_videonum1); </span><br><span class="line">hold on </span><br><span class="line">[h2 x2]=cdfplot(apwin_videonum4); </span><br><span class="line">[h3 x3]=cdfplot(apwin_videonum7); </span><br><span class="line">[h4 x4]=cdfplot(apwin_videonum10); </span><br><span class="line">[h5 x5]=cdfplot(apwin_videonum13); </span><br><span class="line">hold off </span><br><span class="line">title(&apos;AP所采用的最小竞争窗&apos;,&apos;FontName&apos;,&apos;Times New Roman&apos; ,&apos;FontSize&apos;,14) </span><br><span class="line">xlabel(&apos;最小竞争窗&apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14) </span><br><span class="line">ylabel(&apos;CDF Pr(CW&gt;x) &apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14) </span><br><span class="line">% axis([1, 20, 0.9, 1]) </span><br><span class="line">h=legend(&apos;视频节点数1&apos;,&apos;视频节点数4&apos;,&apos;视频节点数7&apos;,&apos;视频节点数10&apos;,&apos;视频节点数13&apos;,0) </span><br><span class="line">grid </span><br><span class="line">set(gca,&apos;box&apos;,&apos;off&apos;); </span><br><span class="line">set(h,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14); </span><br><span class="line">set(h1,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h2,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h3,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h4,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h5,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h2,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h1,&apos;color&apos;,&apos;r&apos;) % 设置线型 </span><br><span class="line">set(h2,&apos;color&apos;,&apos;g&apos;) </span><br><span class="line">set(h3,&apos;color&apos;,&apos;b&apos;) % 设置线型 </span><br><span class="line">set(h4,&apos;color&apos;,&apos;k&apos;) </span><br><span class="line">set(h5,&apos;color&apos;,&apos;c&apos;) % 设置线型 </span><br><span class="line">% set(h1,&apos;Marker&apos;,&apos;*&apos;) % 设置线型 </span><br><span class="line">% set(h2,&apos;Marker&apos;,&apos;p&apos;) </span><br><span class="line">% set(h1,&apos;MarkerSize&apos;,2) % 设置线型 </span><br><span class="line">% set(h2,&apos;MarkerSize&apos;,2)</span><br></pre></td></tr></table></figure></p>
+<p>##复杂图形</p>
+<ul>
+<li><p>子图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SUBPLOT(m,n,p)</span><br><span class="line">将所有的图画在一个m*n的矩阵中，其中p是图像的相对位置</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>双y轴画图<br>可以采用plotyy，但其只能采用默认刻度，不能自主设置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">figure(1);</span><br><span class="line">x = 0:0.01:20;</span><br><span class="line">y1 = 200*exp(-0.05*x).*sin(x);</span><br><span class="line">y2 = 0.8*exp(-0.5*x).*sin(10*x);</span><br><span class="line">[AX,H1,H2] = plotyy(x,y1,x,y2,&apos;plot&apos;); % 取坐标轴句柄AX和画图对象句柄H1\H2</span><br><span class="line">set(get(AX(1),&apos;Ylabel&apos;),&apos;String&apos;,&apos;Slow Decay&apos;) % 设置坐标轴标签</span><br><span class="line">set(get(AX(2),&apos;Ylabel&apos;),&apos;String&apos;,&apos;Fast Decay&apos;)</span><br><span class="line">xlabel(&apos;Time (\musec)&apos;)         % 设置x轴标签</span><br><span class="line">title(&apos;Multiple Decay Rates&apos;)   % 设置标题</span><br><span class="line">set(H1,&apos;LineStyle&apos;,&apos;--&apos;)        % 设置线型</span><br><span class="line">set(H2,&apos;LineStyle&apos;,&apos;:&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>画 横线和竖线<br>画竖线   横轴从1到1 ，纵轴从0到1.<br>plot([1 1], [0 1],’–k’)</p>
+<p>loglog(Y)           表示 x、y坐标都是对数坐标系<br>semilogx(Y)     表示 x坐标轴是对数坐标系<br>semilogy(…)    表示y坐标轴是对数坐标系<br>plotyy                 有两个y坐标轴，一个在左边，一个在右边<br>例1:用方形标记创建一个简单的loglog.<br>解: 输入命令<br>x=logspace(-1,2);<br>loglog(x,exp(x),’-s’)</p>
+<p>%matlab画图可以存成文件，也可以用右键  copy 复制图像到word中，注意用直接copy的方式更加清晰。<br>一、加载数据到本地的变量（MATLAB里的变量都是是矩阵）：<br>可以采用load方式：<br>q1=load(‘./标准排队时延.txt’);     %加载文件  注意 laod 函数，括号里面有单引号，然后是文件路径<br>也可以采用图形界面的 import方式。</p>
+<p>注意画图时，横坐标和纵坐标的行列点数要对应。<br>例如画两条线，第一条是与x轴对应点数的向量，第二条只是一个直线。<br>那么不能直接将这个直线的值作为y轴的值，而应该通过ones函数，将它变为一个和x轴一样点数的向量。<br>否则，出来的图是正确的，但是legend的曲线标签会出错。<br>它会为直线的每一个点都设立一个legend，但是只显示曲线条数的legend，这样肯定会出错的。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/25/Hello-World-0/" rel="next" title="My test!">
+                <i class="fa fa-chevron-left"></i> My test!
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table Des Matières
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Ensemble
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="BH9BLR" />
+          <p class="site-author-name" itemprop="name">BH9BLR</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">articles</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BH9BLR</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Thème -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
