@@ -175,6 +175,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -256,11 +266,27 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/25/Hello-World-0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/25/Hello-World-0/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2016/05/25/Hello-World-0/" class="leancloud_visitors" data-flag-title="My test!">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -350,11 +376,27 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/25/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/25/hello-world/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
 
           
+          
+             <span id="/2016/05/25/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -449,14 +491,49 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/matlab/" itemprop="url" rel="index">
+                    <span itemprop="name">matlab</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/25/matlab/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/25/matlab/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
           
 
           
+          
+             <span id="/2016/04/25/matlab/" class="leancloud_visitors" data-flag-title="MATLAB画图">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -473,10 +550,8 @@
       
         
           
-            <p>#基本画图</p>
-<p>##画图的线型 各种颜色意义</p>
+            <h1 id="基本画图"><a href="#基本画图" class="headerlink" title="基本画图"></a>基本画图</h1><h2 id="画图的线型-各种颜色意义"><a href="#画图的线型-各种颜色意义" class="headerlink" title="画图的线型 各种颜色意义"></a>画图的线型 各种颜色意义</h2><p>**颜色<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;r&apos; 红色 &apos;m&apos; 粉红 &apos;g&apos; 绿色 &apos;c&apos; 青色 &apos;b&apos; 兰色 &apos;w&apos; 白色  &apos;y&apos; 黄色 &apos;k&apos; 黑色</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>颜色<br><code>&#39;r&#39; 红色 &#39;m&#39; 粉红 &#39;g&#39; 绿色 &#39;c&#39; 青色 &#39;b&#39; 兰色 &#39;w&#39; 白色  &#39;y&#39; 黄色 &#39;k&#39; 黑色</code></li>
 <li>各种线型属性选项<br><code>&#39;-&#39; 实线 &#39;--&#39; 虚线 &#39;:&#39; 点线 &#39;-.&#39; 点划线</code></li>
 <li>各种标记点属性选项<br><code>&#39;.&#39; 用点号绘制各数据点 &#39;^&#39; 用上三角绘制各数据点 &#39;+&#39; 用&#39;+&#39;号绘制各数据点 &#39;v&#39; 用下三角绘制各数据点
 &#39;*&#39; 用&#39;*&#39;号绘制各数据点 &#39;&amp;gt;&#39; 用右三角绘制各数据点 &#39; .&#39; 用&#39;.&#39;号绘制各数据点 &#39;&amp;lt;&#39; 用左三角绘制各数据点
@@ -490,9 +565,8 @@
 <ul>
 <li>可以设置的字体：　　‘FontName’,’隶书’ 　　‘FontName’,’宋体’ 　　‘FontName’,’Times New Roman’<br>set(h1,’color’,’r’) % 设置线型<br>% set(h1,’Marker’,’*’) % 设置线型<br>% set(h1,’MarkerSize’,2) % 设置线型<br>% set(h2,’MarkerSize’,2) </li>
 </ul>
-<p>##普通图<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">xxx=[10 13 16 19 22 25 28 31 34]</span><br><span class="line">minnodes = [10 13 16 19 22 22 22 22 22 ]</span><br><span class="line">% plot(xxx,macmac01,&apos;k-*&apos;,xxx,macmac02,&apos;k-p&apos;,xxx,macmac03,&apos;k-^&apos;,xxx,macmac04,&apos;k-.&apos;,xxx,macmac05,&apos;k-s&apos;,xxx,800000,&apos;r-p&apos;,&apos;LineWidth&apos;, 1, &apos;MarkerSize&apos;, 8)</span><br><span class="line">%hold on</span><br><span class="line">%hold off</span><br><span class="line">plot(xxx,minnodes,&apos;k-^&apos;,xxx,xxx,&apos;k-p&apos;,&apos;LineWidth&apos;, 1, &apos;MarkerSize&apos;, 8)</span><br><span class="line">xlabel(&apos;number of active BK stations&apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14)</span><br><span class="line">ylabel(&apos;admited stations&apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14)</span><br><span class="line">%axis([8, 36, 5, 40])</span><br><span class="line">h=legend(&apos;Admission control&apos;,&apos;IEEE 802.11 DCF&apos;,&apos;minimum throughput requirement&apos;,0)</span><br><span class="line">% grid</span><br><span class="line">set(gca,&apos;box&apos;,&apos;off&apos;);</span><br><span class="line">set(h,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14);</span><br><span class="line">%saveas(gcf,&apos;03标准业务排队时延&apos;,&apos;jpg&apos;);</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line">## CDF画图</span><br><span class="line">```                                                                                                                 </span><br><span class="line">[h1 x1]=cdfplot(apwin_videonum1); </span><br><span class="line">hold on </span><br><span class="line">[h2 x2]=cdfplot(apwin_videonum4); </span><br><span class="line">[h3 x3]=cdfplot(apwin_videonum7); </span><br><span class="line">[h4 x4]=cdfplot(apwin_videonum10); </span><br><span class="line">[h5 x5]=cdfplot(apwin_videonum13); </span><br><span class="line">hold off </span><br><span class="line">title(&apos;AP所采用的最小竞争窗&apos;,&apos;FontName&apos;,&apos;Times New Roman&apos; ,&apos;FontSize&apos;,14) </span><br><span class="line">xlabel(&apos;最小竞争窗&apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14) </span><br><span class="line">ylabel(&apos;CDF Pr(CW&gt;x) &apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14) </span><br><span class="line">% axis([1, 20, 0.9, 1]) </span><br><span class="line">h=legend(&apos;视频节点数1&apos;,&apos;视频节点数4&apos;,&apos;视频节点数7&apos;,&apos;视频节点数10&apos;,&apos;视频节点数13&apos;,0) </span><br><span class="line">grid </span><br><span class="line">set(gca,&apos;box&apos;,&apos;off&apos;); </span><br><span class="line">set(h,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14); </span><br><span class="line">set(h1,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h2,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h3,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h4,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h5,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h2,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h1,&apos;color&apos;,&apos;r&apos;) % 设置线型 </span><br><span class="line">set(h2,&apos;color&apos;,&apos;g&apos;) </span><br><span class="line">set(h3,&apos;color&apos;,&apos;b&apos;) % 设置线型 </span><br><span class="line">set(h4,&apos;color&apos;,&apos;k&apos;) </span><br><span class="line">set(h5,&apos;color&apos;,&apos;c&apos;) % 设置线型 </span><br><span class="line">% set(h1,&apos;Marker&apos;,&apos;*&apos;) % 设置线型 </span><br><span class="line">% set(h2,&apos;Marker&apos;,&apos;p&apos;) </span><br><span class="line">% set(h1,&apos;MarkerSize&apos;,2) % 设置线型 </span><br><span class="line">% set(h2,&apos;MarkerSize&apos;,2)</span><br></pre></td></tr></table></figure></p>
-<p>##复杂图形</p>
-<ul>
+<h2 id="普通图"><a href="#普通图" class="headerlink" title="普通图"></a>普通图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">xxx=[10 13 16 19 22 25 28 31 34]</span><br><span class="line">minnodes = [10 13 16 19 22 22 22 22 22 ]</span><br><span class="line">% plot(xxx,macmac01,&apos;k-*&apos;,xxx,macmac02,&apos;k-p&apos;,xxx,macmac03,&apos;k-^&apos;,xxx,macmac04,&apos;k-.&apos;,xxx,macmac05,&apos;k-s&apos;,xxx,800000,&apos;r-p&apos;,&apos;LineWidth&apos;, 1, &apos;MarkerSize&apos;, 8)</span><br><span class="line">%hold on</span><br><span class="line">%hold off</span><br><span class="line">plot(xxx,minnodes,&apos;k-^&apos;,xxx,xxx,&apos;k-p&apos;,&apos;LineWidth&apos;, 1, &apos;MarkerSize&apos;, 8)</span><br><span class="line">xlabel(&apos;number of active BK stations&apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14)</span><br><span class="line">ylabel(&apos;admited stations&apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14)</span><br><span class="line">%axis([8, 36, 5, 40])</span><br><span class="line">h=legend(&apos;Admission control&apos;,&apos;IEEE 802.11 DCF&apos;,&apos;minimum throughput requirement&apos;,0)</span><br><span class="line">% grid</span><br><span class="line">set(gca,&apos;box&apos;,&apos;off&apos;);</span><br><span class="line">set(h,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14);</span><br><span class="line">%saveas(gcf,&apos;03标准业务排队时延&apos;,&apos;jpg&apos;);</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line">## CDF画图</span><br><span class="line">```                                                                                                                 </span><br><span class="line">[h1 x1]=cdfplot(apwin_videonum1); </span><br><span class="line">hold on </span><br><span class="line">[h2 x2]=cdfplot(apwin_videonum4); </span><br><span class="line">[h3 x3]=cdfplot(apwin_videonum7); </span><br><span class="line">[h4 x4]=cdfplot(apwin_videonum10); </span><br><span class="line">[h5 x5]=cdfplot(apwin_videonum13); </span><br><span class="line">hold off </span><br><span class="line">title(&apos;AP所采用的最小竞争窗&apos;,&apos;FontName&apos;,&apos;Times New Roman&apos; ,&apos;FontSize&apos;,14) </span><br><span class="line">xlabel(&apos;最小竞争窗&apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14) </span><br><span class="line">ylabel(&apos;CDF Pr(CW&gt;x) &apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14) </span><br><span class="line">% axis([1, 20, 0.9, 1]) </span><br><span class="line">h=legend(&apos;视频节点数1&apos;,&apos;视频节点数4&apos;,&apos;视频节点数7&apos;,&apos;视频节点数10&apos;,&apos;视频节点数13&apos;,0) </span><br><span class="line">grid </span><br><span class="line">set(gca,&apos;box&apos;,&apos;off&apos;); </span><br><span class="line">set(h,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14); </span><br><span class="line">set(h1,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h2,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h3,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h4,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h5,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h2,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h1,&apos;color&apos;,&apos;r&apos;) % 设置线型 </span><br><span class="line">set(h2,&apos;color&apos;,&apos;g&apos;) </span><br><span class="line">set(h3,&apos;color&apos;,&apos;b&apos;) % 设置线型 </span><br><span class="line">set(h4,&apos;color&apos;,&apos;k&apos;) </span><br><span class="line">set(h5,&apos;color&apos;,&apos;c&apos;) % 设置线型 </span><br><span class="line">% set(h1,&apos;Marker&apos;,&apos;*&apos;) % 设置线型 </span><br><span class="line">% set(h2,&apos;Marker&apos;,&apos;p&apos;) </span><br><span class="line">% set(h1,&apos;MarkerSize&apos;,2) % 设置线型 </span><br><span class="line">% set(h2,&apos;MarkerSize&apos;,2)</span><br></pre></td></tr></table></figure>
+<h2 id="复杂图形"><a href="#复杂图形" class="headerlink" title="复杂图形"></a>复杂图形</h2><ul>
 <li><p>子图</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SUBPLOT(m,n,p)</span><br><span class="line">将所有的图画在一个m*n的矩阵中，其中p是图像的相对位置</span><br></pre></td></tr></table></figure>
 </li>
@@ -579,11 +653,18 @@
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -718,17 +799,135 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bh9blr"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
+  
+    
   
 
 
 
+
+
   
   
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("nL0oSNg6cwsAuWRTDSKlqkk7-gzGzoHsz", "siep3M763sKXCjivvP9UMDDh");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
