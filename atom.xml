@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>BH9BLR Home</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://BH9BLR.top/"/>
+  <updated>2016-05-28T04:43:34.800Z</updated>
+  <id>http://BH9BLR.top/</id>
+  
+  <author>
+    <name>BH9BLR</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo建站笔记</title>
+    <link href="http://BH9BLR.top/2016/05/28/hexoblog.html"/>
+    <id>http://BH9BLR.top/2016/05/28/hexoblog.html</id>
+    <published>2016-05-28T01:38:27.000Z</published>
+    <updated>2016-05-28T04:43:34.800Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;下载安装和初始化&quot;&gt;&lt;a href=&quot;#下载安装和初始化&quot; class=&quot;headerlink&quot; title=&quot;下载安装和初始化&quot;&gt;&lt;/a&gt;下载安装和初始化&lt;/h1&gt;&lt;h2 id=&quot;下载安装所需软件（依次）&quot;&gt;&lt;a href=&quot;#下载安装所需软件（依次）&quot; class=&quot;headerlink&quot; title=&quot;下载安装所需软件（依次）&quot;&gt;&lt;/a&gt;下载安装所需软件（依次）&lt;/h2&gt;&lt;p&gt;1、&lt;a href=&quot;https://nodejs.org/download/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2、&lt;a href=&quot;http://git-scm.com/download/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;安装Hexo&quot;&gt;&lt;a href=&quot;#安装Hexo&quot; class=&quot;headerlink&quot; title=&quot;安装Hexo&quot;&gt;&lt;/a&gt;安装Hexo&lt;/h2&gt;&lt;p&gt;打开git bash：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm  install  −g hexo  //注意Node和Git是依次安装，否则在安装Node.js后需要重启gitbash才能识别npm等命令。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;部署Hexo&quot;&gt;&lt;a href=&quot;#部署Hexo&quot; class=&quot;headerlink&quot; title=&quot;部署Hexo&quot;&gt;&lt;/a&gt;部署Hexo&lt;/h2&gt;&lt;p&gt;在电脑中新建hexo文件夹，在此文件夹中执行：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo init    //Hexo随后会自动在目标文件夹建立网站所需要的所有文件。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;生成静态文件和预览博客&quot;&gt;&lt;a href=&quot;#生成静态文件和预览博客&quot; class=&quot;headerlink&quot; title=&quot;生成静态文件和预览博客&quot;&gt;&lt;/a&gt;生成静态文件和预览博客&lt;/h2&gt;&lt;p&gt;执行以下命令，然后到浏览器输入localhost:4000可以看到博客主页。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo g     //从source文件夹的md文件，生成静态网页文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo s    //打开一个本地web服务器&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;部署-hexo到github和coding&quot;&gt;&lt;a href=&quot;#部署-hexo到github和coding&quot; class=&quot;headerlink&quot; title=&quot;部署 hexo到github和coding&quot;&gt;&lt;/a&gt;部署 hexo到github和coding&lt;/h1&gt;&lt;h2 id=&quot;注册github和coding网站并设置ssh-key。&quot;&gt;&lt;a href=&quot;#注册github和coding网站并设置ssh-key。&quot; class=&quot;headerlink&quot; title=&quot;注册github和coding网站并设置ssh key。&quot;&gt;&lt;/a&gt;注册github和coding网站并设置ssh key。&lt;/h2&gt;&lt;p&gt;参见其他网站进行配置&lt;/p&gt;
+&lt;h2 id=&quot;修改hexo根目录下面的-config-yml文件中的deploy&quot;&gt;&lt;a href=&quot;#修改hexo根目录下面的-config-yml文件中的deploy&quot; class=&quot;headerlink&quot; title=&quot;修改hexo根目录下面的_config.yml文件中的deploy&quot;&gt;&lt;/a&gt;修改hexo根目录下面的_config.yml文件中的deploy&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repo:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      github: git@github.com:BH9BLR/BH9BLR.github.io.git,master&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      coding: git@git.coding.net:BH9BLR/BH9BLR.git,master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;安装hexo-deployer-git&quot;&gt;&lt;a href=&quot;#安装hexo-deployer-git&quot; class=&quot;headerlink&quot; title=&quot;安装hexo-deployer-git&quot;&gt;&lt;/a&gt;安装hexo-deployer-git&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install hexo-deployer-git –save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;部署博客&quot;&gt;&lt;a href=&quot;#部署博客&quot; class=&quot;headerlink&quot; title=&quot;部署博客&quot;&gt;&lt;/a&gt;部署博客&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;在coding上部署博客&quot;&gt;&lt;a href=&quot;#在coding上部署博客&quot; class=&quot;headerlink&quot; title=&quot;在coding上部署博客&quot;&gt;&lt;/a&gt;在coding上部署博客&lt;/h2&gt;&lt;p&gt;使用pages方式在source/需要创建一个空白文件Staticfile（coding.net需要这个文件来作为以静态文件部署的标志）&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd source/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;touch Staticfile  #名字必须是Staticfile&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h1 id=&quot;域名绑定&quot;&gt;&lt;a href=&quot;#域名绑定&quot; class=&quot;headerlink&quot; title=&quot;域名绑定&quot;&gt;&lt;/a&gt;域名绑定&lt;/h1&gt;&lt;p&gt;在万网注册用户名：bh9ble-y，注册域名bh9blr.top，按照下表进行映射:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;配置&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;类型：&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;CNAME&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;默认映射：&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;BH9BLR.coding.me&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;在pages的生成页面，添加域名映射&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;国外映射：&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;BH9BLR.github.io&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;在\hexo\source目录下新建CNAME文件，在其中写入bh9blr.top&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&quot;主题优化&quot;&gt;&lt;a href=&quot;#主题优化&quot; class=&quot;headerlink&quot; title=&quot;主题优化&quot;&gt;&lt;/a&gt;主题优化&lt;/h1&gt;&lt;h2 id=&quot;选择主题&quot;&gt;&lt;a href=&quot;#选择主题&quot; class=&quot;headerlink&quot; title=&quot;选择主题&quot;&gt;&lt;/a&gt;选择主题&lt;/h2&gt;&lt;p&gt;选择 &lt;a href=&quot;https://github.com/MOxFIVE/hexo-theme-yelee&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;yelee&lt;/a&gt;主题。&lt;/p&gt;
+&lt;h2 id=&quot;多分类页面&quot;&gt;&lt;a href=&quot;#多分类页面&quot; class=&quot;headerlink&quot; title=&quot;多分类页面&quot;&gt;&lt;/a&gt;多分类页面&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;在hexo目录下scaffolds/post.md，page.md以及photo.md中，增加”categories:”字段。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在每个md文件的头部加入分类，例如：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;categories: 通信&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;hexo g 命令在根目录/public/categrises下自动生成归档文件夹&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;在主题配置文件进行目录设置&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;menu:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  主页: /&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  所有文章: /archives/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  #HAM: /ham/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  通信:	/categories/通信/     #注意最后的&amp;quot;/&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;图床&quot;&gt;&lt;a href=&quot;#图床&quot; class=&quot;headerlink&quot; title=&quot;图床&quot;&gt;&lt;/a&gt;图床&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;使用七牛图床&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;下载安装和初始化&quot;&gt;&lt;a href=&quot;#下载安装和初始化&quot; class=&quot;headerlink&quot; title=&quot;下载安装和初始化&quot;&gt;&lt;/a&gt;下载安装和初始化&lt;/h1&gt;&lt;h2 id=&quot;下载安装所需软件（依次）&quot;&gt;&lt;a href=&quot;#下载安装所需软件（依次）&quot; cla
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://BH9BLR.top/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
