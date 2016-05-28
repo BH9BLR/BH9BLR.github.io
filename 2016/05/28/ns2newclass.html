@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  
+  <meta charset="utf-8">
+  
+  <title>NS2中增加新类 | BH9BLR Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、建立一个同名的h文件和cc文件例如在mac文件夹下建立  mac_ofdma_ap.h  和 mac_ofdma_ap.cc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NS2中增加新类">
+<meta property="og:url" content="http://BH9BLR.top/2016/05/28/ns2newclass.html">
+<meta property="og:site_name" content="BH9BLR Home">
+<meta property="og:description" content="1、建立一个同名的h文件和cc文件例如在mac文件夹下建立  mac_ofdma_ap.h  和 mac_ofdma_ap.cc">
+<meta property="og:updated_time" content="2016-05-28T13:15:25.154Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NS2中增加新类">
+<meta name="twitter:description" content="1、建立一个同名的h文件和cc文件例如在mac文件夹下建立  mac_ofdma_ap.h  和 mac_ofdma_ap.cc">
+  
+    <link rel="alternative" href="/atom.xml" title="BH9BLR Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+      <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+  
+  
+      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+      <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+          fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+          scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+          search: true
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.jquery_ui = [false];
+      </script>
+  
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+  
+      <script>
+          var _hmt = _hmt || [];
+          (function() {
+              var hm = document.createElement("script");
+              hm.src = "//hm.baidu.com/hm.js?c2694360167c702e7d90cee0e098b89f";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+          })();
+      </script>
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">BH9BLR</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/categories/通信/">通信</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:BH9BLR@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NS2/">NS2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">BHBLR</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">BH9BLR</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">BH9BLR</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/通信/">通信</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:BH9BLR@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-ns2newclass" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/28/ns2newclass.html" class="article-date">
+      <time datetime="2016-05-28T13:05:19.000Z" itemprop="datePublished">2016-05-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      NS2中增加新类
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NS2/">NS2</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1、建立一个同名的h文件和cc文件"><a href="#1、建立一个同名的h文件和cc文件" class="headerlink" title="1、建立一个同名的h文件和cc文件"></a>1、建立一个同名的h文件和cc文件</h1><p>例如在mac文件夹下建立  mac_ofdma_ap.h  和 mac_ofdma_ap.cc<br><a id="more"></a></p>
+<h1 id="2、在头文件中建立对新类进行定义："><a href="#2、在头文件中建立对新类进行定义：" class="headerlink" title="2、在头文件中建立对新类进行定义："></a>2、在头文件中建立对新类进行定义：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#ifndef MAC_802_11EXTOFDMAAP_H_    //头文件中预定义  根据需要替换宏定义</span><br><span class="line">#define MAC_802_11EXTOFDMAAP_H_ </span><br><span class="line">#include &lt;object.h&gt; </span><br><span class="line">#include &lt;queue.h&gt; </span><br><span class="line">#include &lt;drop-tail.h&gt; </span><br><span class="line">#include &lt;packet.h&gt; </span><br><span class="line">#include &quot;lib/bsd-list.h&quot; </span><br><span class="line">//#include &lt;cmu-trace.h&gt; </span><br><span class="line">#include &quot;zhouhu/zhdebug.h&quot;</span><br></pre></td></tr></table></figure>
+<p>引用父类的头文件，如不不加它会出现 expected class-name before ‘{’ token错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;mac-802_11Ext.h&quot;</span><br></pre></td></tr></table></figure></p>
+<p>在头文件中定义类:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Mac_Ofdma_Ap : public Mac802_11Ext &#123; </span><br><span class="line"> public: </span><br><span class="line"> Mac_Ofdma_Ap(); </span><br><span class="line"> void recv(Packet *pkt, Handler*); </span><br><span class="line">  int command(int argc, const char*const* argv); 　　//注意：即使是继承父类，这个函数也必须重新定义和编写。</span><br><span class="line"></span><br><span class="line">//可以继续添加变量以及函数</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>头文件尾部:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#endif   //头文件中预定义</span><br></pre></td></tr></table></figure></p>
+<h1 id="3、在cc文件中，进行c-类和tcl类的绑定-以及c-类中函数的编写"><a href="#3、在cc文件中，进行c-类和tcl类的绑定-以及c-类中函数的编写" class="headerlink" title="3、在cc文件中，进行c++类和tcl类的绑定 以及c++类中函数的编写"></a>3、在cc文件中，进行c++类和tcl类的绑定 以及c++类中函数的编写</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;mac_ofdma_ap.h&quot;      //引用头文件</span><br><span class="line"></span><br><span class="line">#include&lt;time.h&gt; </span><br><span class="line">#include&lt;stdlib.h&gt; </span><br><span class="line"></span><br><span class="line">static class Mac_OFDMA_ApClass : public TclClass &#123;    //注意类是tcl中的类 </span><br><span class="line">public: </span><br><span class="line"> Mac_OFDMA_ApClass() : TclClass(&quot;Mac/OfdmaExtAp&quot;) &#123;&#125;      //tcl class字段的内容将被在tcl中被使用 </span><br><span class="line"> TclObject* create(int, const char*const*) &#123; </span><br><span class="line">  return(new Mac_Ofdma_Ap());     //这个类型和头文件中定义的类型相同 是c++中的类           </span><br><span class="line"> &#125; </span><br><span class="line">&#125; class_macofdmaap;    //取一个独一无二的名字即可</span><br></pre></td></tr></table></figure>
+<p> 后续都是对c++中的类进行编写,例如构造函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Mac_Ofdma_Ap::Mac_Ofdma_Ap() : Mac802_11Ext() </span><br><span class="line">&#123; </span><br><span class="line"> //bind(&quot;schedule_threshold&quot;, &amp;schedule_threshold); </span><br><span class="line">  //定义一个变量，用来标记当前被调度的队列编号。这个编号在令牌pf调度算法中，更新令牌计数器的schedule_video_data_count变量和收到ACK更新剩余播放时间时调用 </span><br><span class="line"> //current_scheduled_queue=0; </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>recv函数一定要重写，否则会出现  undefined reference to `vtable for Mac_Ofdma_Ap’ 错误  这是因为它被定义为一个纯虚类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void Mac_Ofdma_Ap::recv(Packet *pkt, Handler*)&#123; </span><br><span class="line"></span><br><span class="line"> printf(&quot;111\n&quot;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编写command函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">int Mac_Ofdma_Ap::command(int argc, const char*const* argv) &#123; </span><br><span class="line"></span><br><span class="line"> if (argc ==2) &#123; </span><br><span class="line">   if(strcmp(argv[1],&quot;show_ap_mac&quot;)==0) &#123; </span><br><span class="line">    //show_ap_mac(); </span><br><span class="line">    return TCL_OK; </span><br><span class="line">   &#125; </span><br><span class="line"> &#125; </span><br><span class="line"></span><br><span class="line"> if (argc ==3) &#123; </span><br><span class="line">   if(strcmp(argv[1],&quot;set_min_flow_num&quot;)==0) &#123; </span><br><span class="line">    int value = atoi(argv[2]); </span><br><span class="line">    //min_flow_num=value; </span><br><span class="line">   //printf(&quot;[MAC AP] node: %d,set min_flow_num =%d \n&quot;,index_,value); </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    return TCL_OK; </span><br><span class="line">   &#125; </span><br><span class="line"> &#125; </span><br><span class="line"></span><br><span class="line">/* </span><br><span class="line"> //这里记录以下从tcl文件传过来的配置参数，主要是不同TCP流对应的优先级 </span><br><span class="line"> if (argc ==4) &#123; </span><br><span class="line">   if(strcmp(argv[1],&quot;setpri_interval_max&quot;)==0) &#123; </span><br><span class="line"></span><br><span class="line">    int fid = atoi(argv[2]); </span><br><span class="line">    double value= atof(argv[3]); </span><br><span class="line">    fid_pri_interval_max_[fid] =value; </span><br><span class="line"></span><br><span class="line">    //顺便将0下标元素设置为0. 以免在比例公平型处调度。 </span><br><span class="line">    fid_pri_interval_max_[0] =0; </span><br><span class="line">    printf(&quot;node: %s,set fid %d, fid_pri_interval_max_ =%f,fid_pri_interval_max_value =%f ap_queues_num =%d \n&quot;,name(),fid,value,fid_pri_interval_max_value,ap_queues_num); </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    return TCL_OK; </span><br><span class="line"></span><br><span class="line">  &#125; </span><br><span class="line"> &#125; </span><br><span class="line">*/ </span><br><span class="line"></span><br><span class="line">  return Mac802_11Ext::command(argc, argv); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="4、在ns2-34-目录下的Makefile中加入新类的对象。"><a href="#4、在ns2-34-目录下的Makefile中加入新类的对象。" class="headerlink" title="4、在ns2.34/目录下的Makefile中加入新类的对象。"></a>4、在ns2.34/目录下的Makefile中加入新类的对象。</h1><p>在第330行后面加上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zhouhu/tcp-sinkplayer.o \</span><br><span class="line">mac/mac-802_11Extap.o \</span><br><span class="line">tcp/tcp_ap.o \</span><br><span class="line">$(OBJ_STL)</span><br></pre></td></tr></table></figure></p>
+<h1 id="5、在ns-default-tcl中-把子类中对父类的变量的绑定重新定义一遍"><a href="#5、在ns-default-tcl中-把子类中对父类的变量的绑定重新定义一遍" class="headerlink" title="5、在ns-default.tcl中 把子类中对父类的变量的绑定重新定义一遍"></a>5、在ns-default.tcl中 把子类中对父类的变量的绑定重新定义一遍</h1><p>如果不绑定则会提出找不到相应的变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**warning: no class variable Mac/802_11ExtAp::fw_logthresh_**</span><br></pre></td></tr></table></figure></p>
+<p>出现这种错误的原因主要是因为定义了一个新类，从原来的基类继承过来，在cc文件中修改了部分函数，但新的子类并没有对应的tcl变量。<br>也就是说：子类继承了父类在c++方便的各种成员变量，但并不能将父类对应的tcl变量继承过来，因为它在TCL方面也不是继承关系。<br><strong>解决方法：</strong><br>在ns_default.tcl文件中定义新类的TCL变量，并重新make整个工程。</p>
+<h1 id="6、新类中重写函数替代父类中同名函数的功能"><a href="#6、新类中重写函数替代父类中同名函数的功能" class="headerlink" title="6、新类中重写函数替代父类中同名函数的功能"></a>6、新类中重写函数替代父类中同名函数的功能</h1><ul>
+<li>将父类该函数使用virtual关键字描述，也即面向对象的重写。 </li>
+<li>如果新的类是继承原来的父类，要定义一下新的cmooand函数，在其中调用父类的command函数，来完成各种统计和绑定信息。<h1 id="7、出错信息提示："><a href="#7、出错信息提示：" class="headerlink" title="7、出错信息提示："></a>7、出错信息提示：</h1>1、<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">error: expected type-specifier before ‘Mac802_11ExtAp_ac’</span><br><span class="line">mac/mac-802_11Extap_ac.cc:21: error: expected ‘)’ before ‘Mac802_11ExtAp_ac’</span><br><span class="line">mac/mac-802_11Extap_ac.cc:21: error: cannot convert ‘int*’ to ‘TclObject*’ in return</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>错误原因：当时复制了一类做为另一个类的模板，但在cc文件中忘了更新头文件。<br>2、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ns: [code omitted because of length]: invalid command name</span><br></pre></td></tr></table></figure></p>
+<p>错误原因：构造函数编写问题。<br>3、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">undefined reference to `vtable for Mac_Ofdma_Ap&apos;</span><br></pre></td></tr></table></figure></p>
+<p>错误原因：在子类中未对父类的虚函数进行定义。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/05/28/ns2newclass.html">NS2中增加新类</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">BH9BLR</a></p>
+        <p><span>发布时间:</span>2016-05-28, 21:05:19</p>
+        <p><span>最后更新:</span>2016-05-28, 21:15:25</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/28/ns2newclass.html" title="NS2中增加新类">http://BH9BLR.top/2016/05/28/ns2newclass.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://BH9BLR.top/2016/05/28/ns2newclass.html　　作者: BH9BLR" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/05/28/linuxtextproc.html">
+                    linux文档处理
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1、建立一个同名的h文件和cc文件"><span class="toc-number">1.</span> <span class="toc-text">1、建立一个同名的h文件和cc文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、在头文件中建立对新类进行定义："><span class="toc-number">2.</span> <span class="toc-text">2、在头文件中建立对新类进行定义：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、在cc文件中，进行c-类和tcl类的绑定-以及c-类中函数的编写"><span class="toc-number">3.</span> <span class="toc-text">3、在cc文件中，进行c++类和tcl类的绑定 以及c++类中函数的编写</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4、在ns2-34-目录下的Makefile中加入新类的对象。"><span class="toc-number">4.</span> <span class="toc-text">4、在ns2.34/目录下的Makefile中加入新类的对象。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5、在ns-default-tcl中-把子类中对父类的变量的绑定重新定义一遍"><span class="toc-number">5.</span> <span class="toc-text">5、在ns-default.tcl中 把子类中对父类的变量的绑定重新定义一遍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6、新类中重写函数替代父类中同名函数的功能"><span class="toc-number">6.</span> <span class="toc-text">6、新类中重写函数替代父类中同名函数的功能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7、出错信息提示："><span class="toc-number">7.</span> <span class="toc-text">7、出错信息提示：</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"NS2中增加新类　| BH9BLR Home　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/05/28/ns2newclass.html" data-title="NS2中增加新类" data-url="http://BH9BLR.top/2016/05/28/ns2newclass.html"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bh9blr"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/05/28/linuxtextproc.html" title="下一篇: linux文档处理">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/ns2newclass.html">NS2中增加新类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/linuxtextproc.html">linux文档处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/linuxshellissue.html">linux shell 编程注意事项</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/hexoblog.html">Hexo建站笔记</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 BH9BLR
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.0">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

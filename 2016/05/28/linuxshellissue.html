@@ -4,18 +4,18 @@
   
   <meta charset="utf-8">
   
-  <title>Tags | BH9BLR Home</title>
+  <title>linux shell 编程注意事项 | BH9BLR Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="http://BH9BLR.top/tags/index.html">
+  <meta name="description" content="变量运算要想引用某个变量做为一个表达式时，需要用双括号，并且在最外层加 $.1CONFIG3=&amp;quot;-play_rate $(($ii*100))&amp;quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux shell 编程注意事项">
+<meta property="og:url" content="http://BH9BLR.top/2016/05/28/linuxshellissue.html">
 <meta property="og:site_name" content="BH9BLR Home">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-05-27T09:05:51.230Z">
+<meta property="og:description" content="变量运算要想引用某个变量做为一个表达式时，需要用双括号，并且在最外层加 $.1CONFIG3=&amp;quot;-play_rate $(($ii*100))&amp;quot;">
+<meta property="og:updated_time" content="2016-05-28T13:00:11.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags">
-<meta name="twitter:description">
+<meta name="twitter:title" content="linux shell 编程注意事项">
+<meta name="twitter:description" content="变量运算要想引用某个变量做为一个表达式时，需要用双括号，并且在最外层加 $.1CONFIG3=&amp;quot;-play_rate $(($ii*100))&amp;quot;">
   
     <link rel="alternative" href="/atom.xml" title="BH9BLR Home" type="application/atom+xml">
   
@@ -44,7 +44,7 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -258,11 +258,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-linuxshellissue" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2016-05-26T13:34:59.000Z" itemprop="datePublished">2016-05-26</time>
+      <a href="/2016/05/28/linuxshellissue.html" class="article-date">
+      <time datetime="2016-05-28T12:58:04.000Z" itemprop="datePublished">2016-05-28</time>
 </a>
     </div>
   
@@ -275,7 +275,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Tags
+      linux shell 编程注意事项
     </h1>
   
 
@@ -285,6 +285,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -292,96 +296,103 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
+        <h1 id="变量运算"><a href="#变量运算" class="headerlink" title="变量运算"></a>变量运算</h1><p>要想引用某个变量做为一个表达式时，需要用双括号，并且在最外层加 $.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFIG3=&quot;-play_rate $(($ii*100))&quot;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash  </span><br><span class="line">#执行数值运算时，第一行必须是/bin/bash，而不是/bin/sh</span><br><span class="line">if [ $# -lt 1 ] </span><br><span class="line">then </span><br><span class="line">echo &quot;Usage:*.sh k&quot; </span><br><span class="line">exit </span><br><span class="line">fi </span><br><span class="line">num=$[$1*$1*$1/4] </span><br><span class="line">for((i=0;i&lt;10;i++)</span><br><span class="line">do </span><br><span class="line">echo$i </span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<h1 id="变量赋值"><a href="#变量赋值" class="headerlink" title="变量赋值"></a>变量赋值</h1><p>注意：<br>1.等号右边不能有空格<br>2.等号右边不用加符号$ </p>
+<p>3.作为等号右边角色是（取变量）要加符号$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NSEXE=/home/zhouhu/ns-allinone-2.34/ns-2.34/ns   #其中NSEXE右边的等号不能有空格</span><br><span class="line">TEST=&quot;test 1&quot; 当对某个变量赋值时，就直接使用变量名，不要加$符号</span><br><span class="line">echo $TEST</span><br><span class="line">TEST=&quot;test 2&quot;</span><br><span class="line">echo $TEST</span><br><span class="line">$TEST=&quot;test 3&quot;</span><br><span class="line">echo $TEST</span><br><span class="line">输出的结果是：</span><br><span class="line">test1</span><br><span class="line">test2</span><br><span class="line">test2</span><br></pre></td></tr></table></figure>
+<p>4.如果使用的是 if 这类的语句，则 if [ ] 等符号之间左右必须有空格，否则系统就将他们作为一个变量，而不会识别<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if [ $TCP_WIN = 1]</span><br></pre></td></tr></table></figure></p>
+<p>5.如果等式右边是一串字符串，之间有空格，那么应该将他们用引号括起来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFIG=&quot;-play_rate 1000 -video_file_len_in_num 10000 -tcp_win 1000 -nn 1 -mac_cwmin 31 -mac_cwmax 1023&quot;</span><br></pre></td></tr></table></figure></p>
+<p>6.引用变量时，直接在前面使用$符号即可，不需要使用小括号， 如果想让变量是紧密连接的，那么在引用它们时中间不使用空格即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$NSEXE $NSHOME$TCLFILE $CONFIG &gt;test.txt</span><br></pre></td></tr></table></figure></p>
+<h1 id="for循环变量设置"><a href="#for循环变量设置" class="headerlink" title="for循环变量设置"></a>for循环变量设置</h1><p>选取i在某个序列中的一系列值，使用seq函数，该函数可以跟三个参数，分别为 首数，增量 ，尾数。<br>例如 seq 1 2 10 ，则表示从1开始，增量为2，直到10 ， 实际输出为 1 3 5 7 9<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for i in $(seq 1 2 10);     #注意有分号，这个分号其实是针对seq的</span><br><span class="line">#for i in `seq 10`   #这个是简单写法，也是给出从1到10一共10个数</span><br><span class="line">do </span><br><span class="line">   echo $i; </span><br><span class="line">done;</span><br></pre></td></tr></table></figure></p>
+<p>另外一种是生成自己的序列，可以配置任意字符 ，例如想要使用 1 2 5，则使用如下的脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">for i in 1 2 5</span><br><span class="line">do</span><br><span class="line">    echo $i;</span><br><span class="line">done;</span><br></pre></td></tr></table></figure></p>
 
-
-    <!-- Tag Cloud Page -->
-    <hr>
-<br>
-
-
-<p class="count"></p>
-
-<div class="tags">
-    <a href="/tags/NS2/" style="font-size: 16px; color: #808080">NS2</a> <a href="/tags/hexo/" style="font-size: 16px; color: #808080">hexo</a> <a href="/tags/linux/" style="font-size: 35px; color: #000">linux</a> <a href="/tags/shell/" style="font-size: 35px; color: #000">shell</a>
-</div>
-<style>
-    .category-list li{
-        display: inline-block;
-        margin: 0 1em .5em 0;
-        padding: 4px;
-        border: 1px solid lightgray;
-        font-size: 1.2rem;
-    }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
-        text-decoration: none;
-    }
-    .category-list-count {
-        margin-left: 2px;
-        font-size: .9rem;
-    }
-    .article-entry ul li:before{ display: none; }
-    .article-inner { text-align: center; }
-    .tags {
-        max-width: 42em;
-        margin: 2em auto;
-        margin-top: 0em;
-    }
-    .tags a {
-        margin-right: 1em;
-        line-height: 65px;
-        border-bottom: 1px solid gray;
-        white-space: nowrap;
-        transition: border-bottom .5s;
-    }
-    .tags a:hover {
-        border-bottom: 3px dotted gray;
-        text-decoration: none;
-    }
-    #count > span {
-        margin: auto .2em;
-        font-weight: bold;
-    }
-</style>
-
-<!-- Count tags and categories -->
-<p id="count">
-        已有<span><script>document.write($(".category-list-item").length)</script></span>个分类，
-        共计<span><script>document.write($(".tags > a").length)</script></span>个标签
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
-
-          
-        
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/05/28/linuxshellissue.html">linux shell 编程注意事项</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">BH9BLR</a></p>
+        <p><span>发布时间:</span>2016-05-28, 20:58:04</p>
+        <p><span>最后更新:</span>2016-05-28, 21:00:11</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/28/linuxshellissue.html" title="linux shell 编程注意事项">http://BH9BLR.top/2016/05/28/linuxshellissue.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://BH9BLR.top/2016/05/28/linuxshellissue.html　　作者: BH9BLR" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/05/28/linuxtextproc.html">
+                    linux文档处理
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/05/28/hexoblog.html">
+                    Hexo建站笔记
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量运算"><span class="toc-number">1.</span> <span class="toc-text">变量运算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量赋值"><span class="toc-number">2.</span> <span class="toc-text">变量赋值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#for循环变量设置"><span class="toc-number">3.</span> <span class="toc-text">for循环变量设置</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
 
 
 
@@ -399,7 +410,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Tags　| BH9BLR Home　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"linux shell 编程注意事项　| BH9BLR Home　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -412,6 +423,48 @@
 
 
 
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/05/28/linuxshellissue.html" data-title="linux shell 编程注意事项" data-url="http://BH9BLR.top/2016/05/28/linuxshellissue.html"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bh9blr"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/05/28/linuxtextproc.html" title="上一篇: linux文档处理">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/05/28/hexoblog.html" title="下一篇: Hexo建站笔记">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/ns2newclass.html">NS2中增加新类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/linuxtextproc.html">linux文档处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/linuxshellissue.html">linux shell 编程注意事项</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/hexoblog.html">Hexo建站笔记</a></li></ul>
 
 
 
