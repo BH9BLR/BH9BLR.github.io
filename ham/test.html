@@ -11,7 +11,7 @@
 #3.将备份命令加入定时任务123crontab -e 选择第2个编辑器，输入   */1  *  *  *  *  rsync -av /home/zhouhu/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ham">
-<meta property="og:url" content="http://BHBLR.top/ham/test.html">
+<meta property="og:url" content="http://BH9BLR.top/ham/test.html">
 <meta property="og:site_name" content="BH9BLR Home">
 <meta property="og:description" content="#1.在windows上安装cwrsyncserver
 #2.在linux上执行执行：1rsync -av /home/zhouhu/ns-allinone-2.34/ns-2.34/ rsync://10.13.15.44/test
@@ -57,7 +57,7 @@
           open_in_new: false,
           fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
           scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-          search: undefined
+          search: true
       }
   </script>
 
@@ -91,6 +91,13 @@
 
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -475,7 +482,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="ham/test.html" data-title="ham" data-url="http://BHBLR.top/ham/test.html"></div>
+    <div class="ds-thread" data-thread-key="ham/test.html" data-title="ham" data-url="http://BH9BLR.top/ham/test.html"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

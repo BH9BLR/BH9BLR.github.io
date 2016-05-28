@@ -14,7 +14,7 @@
 1$ hexo init    //Hexo随后会自动在目标文件夹建立网站所需">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo建站笔记">
-<meta property="og:url" content="http://BHBLR.top/2016/05/28/hexoblog.html">
+<meta property="og:url" content="http://BH9BLR.top/2016/05/28/hexoblog.html">
 <meta property="og:site_name" content="BH9BLR Home">
 <meta property="og:description" content="下载安装和初始化下载安装所需软件（依次）1、Node
 2、Git
@@ -66,7 +66,7 @@
           open_in_new: false,
           fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
           scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-          search: undefined
+          search: true
       }
   </script>
 
@@ -100,6 +100,13 @@
 
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -360,8 +367,8 @@
         <p><span>发布时间:</span>2016-05-28, 09:38:27</p>
         <p><span>最后更新:</span>2016-05-28, 12:43:34</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/28/hexoblog.html" title="Hexo建站笔记">http://BHBLR.top/2016/05/28/hexoblog.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://BHBLR.top/2016/05/28/hexoblog.html　　作者: BH9BLR" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/28/hexoblog.html" title="Hexo建站笔记">http://BH9BLR.top/2016/05/28/hexoblog.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://BH9BLR.top/2016/05/28/hexoblog.html　　作者: BH9BLR" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -449,7 +456,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/05/28/hexoblog.html" data-title="Hexo建站笔记" data-url="http://BHBLR.top/2016/05/28/hexoblog.html"></div>
+    <div class="ds-thread" data-thread-key="2016/05/28/hexoblog.html" data-title="Hexo建站笔记" data-url="http://BH9BLR.top/2016/05/28/hexoblog.html"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
