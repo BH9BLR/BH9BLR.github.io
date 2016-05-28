@@ -9,7 +9,7 @@
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="BH9BLR Home">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://BHBLR.top/index.html">
 <meta property="og:site_name" content="BH9BLR Home">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -144,8 +144,6 @@
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
-                            <li><a href="/ham/">HAM</a></li>
-                        
                             <li><a href="/categories/通信/">通信</a></li>
                         
                             <li><a href="/tags/">标签云</a></li>
@@ -170,7 +168,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无线局域网/">无线局域网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/画图/">画图</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
                     </div>
                 </section>
                 
@@ -223,8 +221,6 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
-                    <li><a href="/ham/">HAM</a></li>
-                
                     <li><a href="/categories/通信/">通信</a></li>
                 
                     <li><a href="/tags/">标签云</a></li>
@@ -251,11 +247,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-communication" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hexoblog" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/28/communication/" class="article-date">
-      <time datetime="2016-05-27T23:30:54.000Z" itemprop="datePublished">2016-05-28</time>
+      <a href="/2016/05/28/hexoblog.html" class="article-date">
+      <time datetime="2016-05-28T01:38:27.000Z" itemprop="datePublished">2016-05-28</time>
 </a>
     </div>
   
@@ -268,7 +264,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/28/communication/">无线局域网的发展史</a>
+      <a class="article-title" href="/2016/05/28/hexoblog.html">Hexo建站笔记</a>
     </h1>
   
 
@@ -278,295 +274,70 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="无线局域网的发展史"><a href="#无线局域网的发展史" class="headerlink" title="无线局域网的发展史"></a>无线局域网的发展史</h1><h1 id="第一部分："><a href="#第一部分：" class="headerlink" title="第一部分："></a>第一部分：</h1><h2 id="802-11时代"><a href="#802-11时代" class="headerlink" title="802.11时代"></a>802.11时代</h2><h2 id="802-11e时代"><a href="#802-11e时代" class="headerlink" title="802.11e时代"></a>802.11e时代</h2><h2 id="802-11g时代"><a href="#802-11g时代" class="headerlink" title="802.11g时代"></a>802.11g时代</h2><h2 id="802-11n时代"><a href="#802-11n时代" class="headerlink" title="802.11n时代"></a>802.11n时代</h2><h2 id="802-11ac时代"><a href="#802-11ac时代" class="headerlink" title="802.11ac时代"></a>802.11ac时代</h2>
+        <h1 id="下载安装和初始化"><a href="#下载安装和初始化" class="headerlink" title="下载安装和初始化"></a>下载安装和初始化</h1><h2 id="下载安装所需软件（依次）"><a href="#下载安装所需软件（依次）" class="headerlink" title="下载安装所需软件（依次）"></a>下载安装所需软件（依次）</h2><p>1、<a href="https://nodejs.org/download/" target="_blank" rel="external">Node</a></p>
+<p>2、<a href="http://git-scm.com/download/" target="_blank" rel="external">Git</a></p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>打开git bash：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm  install  −g hexo  //注意Node和Git是依次安装，否则在安装Node.js后需要重启gitbash才能识别npm等命令。</span><br></pre></td></tr></table></figure>
+<h2 id="部署Hexo"><a href="#部署Hexo" class="headerlink" title="部署Hexo"></a>部署Hexo</h2><p>在电脑中新建hexo文件夹，在此文件夹中执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init    //Hexo随后会自动在目标文件夹建立网站所需要的所有文件。</span><br></pre></td></tr></table></figure>
+<h2 id="生成静态文件和预览博客"><a href="#生成静态文件和预览博客" class="headerlink" title="生成静态文件和预览博客"></a>生成静态文件和预览博客</h2><p>执行以下命令，然后到浏览器输入localhost:4000可以看到博客主页。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g     //从source文件夹的md文件，生成静态网页文件</span><br><span class="line">$ hexo s    //打开一个本地web服务器</span><br></pre></td></tr></table></figure>
+<h1 id="部署-hexo到github和coding"><a href="#部署-hexo到github和coding" class="headerlink" title="部署 hexo到github和coding"></a>部署 hexo到github和coding</h1><h2 id="注册github和coding网站并设置ssh-key。"><a href="#注册github和coding网站并设置ssh-key。" class="headerlink" title="注册github和coding网站并设置ssh key。"></a>注册github和coding网站并设置ssh key。</h2><p>参见其他网站进行配置</p>
+<h2 id="修改hexo根目录下面的-config-yml文件中的deploy"><a href="#修改hexo根目录下面的-config-yml文件中的deploy" class="headerlink" title="修改hexo根目录下面的_config.yml文件中的deploy"></a>修改hexo根目录下面的_config.yml文件中的deploy</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">      github: git@github.com:BH9BLR/BH9BLR.github.io.git,master</span><br><span class="line">      coding: git@git.coding.net:BH9BLR/BH9BLR.git,master</span><br></pre></td></tr></table></figure>
+<h2 id="安装hexo-deployer-git"><a href="#安装hexo-deployer-git" class="headerlink" title="安装hexo-deployer-git"></a>安装hexo-deployer-git</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git –save</span><br></pre></td></tr></table></figure>
+<h2 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="在coding上部署博客"><a href="#在coding上部署博客" class="headerlink" title="在coding上部署博客"></a>在coding上部署博客</h2><p>使用pages方式在source/需要创建一个空白文件Staticfile（coding.net需要这个文件来作为以静态文件部署的标志）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd source/</span><br><span class="line">touch Staticfile  #名字必须是Staticfile</span><br></pre></td></tr></table></figure></p>
+<h1 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h1><p>在万网注册用户名：bh9ble-y，注册域名bh9blr.top，按照下表进行映射:</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">配置</th>
+<th style="text-align:center">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型：</td>
+<td style="text-align:center">CNAME</td>
+</tr>
+<tr>
+<td>默认映射：</td>
+<td style="text-align:center">BH9BLR.coding.me</td>
+<td style="text-align:center">在pages的生成页面，添加域名映射</td>
+</tr>
+<tr>
+<td>国外映射：</td>
+<td style="text-align:center">BH9BLR.github.io</td>
+<td style="text-align:center">在\hexo\source目录下新建CNAME文件，在其中写入bh9blr.top</td>
+</tr>
+</tbody>
+</table>
+<h1 id="主题优化"><a href="#主题优化" class="headerlink" title="主题优化"></a>主题优化</h1><h2 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h2><p>选择 <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">yelee</a>主题。</p>
+<h2 id="多分类页面"><a href="#多分类页面" class="headerlink" title="多分类页面"></a>多分类页面</h2><ol>
+<li>在hexo目录下scaffolds/post.md，page.md以及photo.md中，增加”categories:”字段。</li>
+<li><p>在每个md文件的头部加入分类，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">categories: 通信</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>hexo g 命令在根目录/public/categrises下自动生成归档文件夹</p>
+</li>
+<li>在主题配置文件进行目录设置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  所有文章: /archives/</span><br><span class="line">  #HAM: /ham/</span><br><span class="line">  通信:	/categories/通信/     #注意最后的&quot;/&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><ul>
+<li>使用七牛图床</li>
+</ul>
+
       
     </div>
     
     <div class="article-info article-info-index">
       
       
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/通信/">通信</a>
-    </div>
-
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/无线局域网/">无线局域网</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-ns2-mac" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/27/ns2-mac/" class="article-date">
-      <time datetime="2016-05-27T08:26:33.000Z" itemprop="datePublished">2016-05-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/27/ns2-mac/">ns2-mac</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Hello-World-0" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/25/Hello-World-0/" class="article-date">
-      <time datetime="2016-05-25T07:40:17.000Z" itemprop="datePublished">2016-05-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/25/Hello-World-0/">My test!</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="This-is-a-hello-word-test"><a href="#This-is-a-hello-word-test" class="headerlink" title="This is a hello word test"></a>This is a hello word test</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int a =10;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/25/hello-world/" class="article-date">
-      <time datetime="2016-05-25T07:13:24.917Z" itemprop="datePublished">2016-05-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-matlab" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/25/matlab/" class="article-date">
-      <time datetime="2016-04-25T07:40:17.000Z" itemprop="datePublished">2016-04-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/25/matlab/">MATLAB画图</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="基本画图"><a href="#基本画图" class="headerlink" title="基本画图"></a>基本画图</h1><h2 id="画图的基本要素"><a href="#画图的基本要素" class="headerlink" title="画图的基本要素"></a>画图的基本要素</h2><ul>
-<li><strong>颜色</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;LineWidth&apos;, 1,</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set(h1,&apos;color&apos;,&apos;r&apos;) % 设置颜色</span><br><span class="line"></span><br><span class="line">&apos;r&apos; 红色 &apos;m&apos; 粉红 &apos;g&apos; 绿色 &apos;c&apos; 青色 &apos;b&apos; 兰色 &apos;w&apos; 白色  &apos;y&apos; 黄色 &apos;k&apos; 黑色</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>各种线型属性选项</strong></li>
-</ul>
-<p><code>&#39;-&#39; 实线 &#39;--&#39; 虚线 &#39;:&#39; 点线 &#39;-.&#39; 点划线</code></p>
-<ul>
-<li><strong>各种标记点属性选项</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> &apos;.&apos; 用点号绘制各数据点 &apos;^&apos; 用上三角绘制各数据点 &apos;+&apos; 用&apos;+&apos;号绘制各数据点 &apos;v&apos; 用下三角绘制各数据点</span><br><span class="line">&apos;*&apos; 用&apos;*&apos;号绘制各数据点 .&apos; 用&apos;.&apos;号绘制各数据点 &apos;s&apos;或squar 用正方形绘制各数据点&apos;p&apos; 用五角星绘制各数据点 &apos;d&apos;或diamond用菱形绘制各数据点 &apos;h&apos; 用六角星绘制各数据点</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>颜色、线型、标记点可以连在一起用,如:’-.g’表示绘制绿色的点划线,’g+’表示用绿色的’+’号绘制曲线.</p>
-<p>注意:1)表示属性的符号必须放在同一个字符串中; 2)可同时指定2~3个属性; 3)与先后顺序无关; 4)指定的属性中,同一种属性不能有两个以上.</p>
-</blockquote>
-<ul>
-<li><strong>线宽</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;LineWidth&apos;, 1,</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>标记大小</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;MarkerSize&apos;, 8</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>字体</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;FontName&apos;,&apos;隶书&apos; 　　&apos;FontName&apos;,&apos;宋体&apos; 　　&apos;FontName&apos;,&apos;Times New Roman&apos;</span><br></pre></td></tr></table></figure>
-<p>% set(h1,’Marker’,’*’) % 设置线型<br>% set(h1,’MarkerSize’,2) % 设置线型<br>% set(h2,’MarkerSize’,2) </p>
-<h2 id="普通图"><a href="#普通图" class="headerlink" title="普通图"></a>普通图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">xxx=[10 13 16 19 22 25 28 31 34]</span><br><span class="line"></span><br><span class="line">minnodes = [10 13 16 19 22 22 22 22 22 ]</span><br><span class="line">% plot(xxx,macmac01,&apos;k-*&apos;,xxx,macmac02,&apos;k-p&apos;,xxx,macmac03,&apos;k-^&apos;,xxx,macmac04,&apos;k-.&apos;,xxx,macmac05,&apos;k-s&apos;,xxx,800000,&apos;r-p&apos;,&apos;LineWidth&apos;, 1, &apos;MarkerSize&apos;, 8)</span><br><span class="line">%hold on</span><br><span class="line">%hold off</span><br><span class="line">plot(xxx,minnodes,&apos;k-^&apos;,xxx,xxx,&apos;k-p&apos;,&apos;LineWidth&apos;, 1, &apos;MarkerSize&apos;, 8)</span><br><span class="line">xlabel(&apos;number of active BK stations&apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14)</span><br><span class="line">ylabel(&apos;admited stations&apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14)</span><br><span class="line">%axis([8, 36, 5, 40])</span><br><span class="line">h=legend(&apos;Admission control&apos;,&apos;IEEE 802.11 DCF&apos;,&apos;minimum throughput requirement&apos;,0)</span><br><span class="line">% grid</span><br><span class="line">set(gca,&apos;box&apos;,&apos;off&apos;);</span><br><span class="line">set(h,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14);</span><br><span class="line">%saveas(gcf,&apos;03标准业务排队时延&apos;,&apos;jpg&apos;);</span><br></pre></td></tr></table></figure>
-<h2 id="CDF画图"><a href="#CDF画图" class="headerlink" title="CDF画图"></a>CDF画图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[h1 x1]=cdfplot(apwin_videonum1); </span><br><span class="line">hold on </span><br><span class="line">[h2 x2]=cdfplot(apwin_videonum4); </span><br><span class="line">[h3 x3]=cdfplot(apwin_videonum7); </span><br><span class="line">[h4 x4]=cdfplot(apwin_videonum10); </span><br><span class="line">[h5 x5]=cdfplot(apwin_videonum13); </span><br><span class="line">hold off </span><br><span class="line">title(&apos;AP所采用的最小竞争窗&apos;,&apos;FontName&apos;,&apos;Times New Roman&apos; ,&apos;FontSize&apos;,14) </span><br><span class="line">xlabel(&apos;最小竞争窗&apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14) </span><br><span class="line">ylabel(&apos;CDF Pr(CW&gt;x) &apos;,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14) </span><br><span class="line">% axis([1, 20, 0.9, 1]) </span><br><span class="line">h=legend(&apos;视频节点数1&apos;,&apos;视频节点数4&apos;,&apos;视频节点数7&apos;,&apos;视频节点数10&apos;,&apos;视频节点数13&apos;,0) </span><br><span class="line">grid </span><br><span class="line">set(gca,&apos;box&apos;,&apos;off&apos;); </span><br><span class="line">set(h,&apos;FontName&apos;,&apos;宋体&apos; ,&apos;FontSize&apos;,14); </span><br><span class="line">set(h1,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h2,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h3,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h4,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h5,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h2,&apos;LineWidth&apos;,3) % 设置线型 </span><br><span class="line">set(h1,&apos;color&apos;,&apos;r&apos;) % 设置线型 </span><br><span class="line">set(h2,&apos;color&apos;,&apos;g&apos;) </span><br><span class="line">set(h3,&apos;color&apos;,&apos;b&apos;) % 设置线型 </span><br><span class="line">set(h4,&apos;color&apos;,&apos;k&apos;) </span><br><span class="line">set(h5,&apos;color&apos;,&apos;c&apos;) % 设置线型 </span><br><span class="line">% set(h1,&apos;Marker&apos;,&apos;*&apos;) % 设置线型 </span><br><span class="line">% set(h2,&apos;Marker&apos;,&apos;p&apos;) </span><br><span class="line">% set(h1,&apos;MarkerSize&apos;,2) % 设置线型 </span><br><span class="line">% set(h2,&apos;MarkerSize&apos;,2)</span><br></pre></td></tr></table></figure>
-<h2 id="复杂图形"><a href="#复杂图形" class="headerlink" title="复杂图形"></a>复杂图形</h2><ul>
-<li><p>子图</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SUBPLOT(m,n,p)</span><br><span class="line">将所有的图画在一个m*n的矩阵中，其中p是图像的相对位置</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>双y轴画图<br>可以采用plotyy，但其只能采用默认刻度，不能自主设置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">figure(1);</span><br><span class="line">x = 0:0.01:20;</span><br><span class="line">y1 = 200*exp(-0.05*x).*sin(x);</span><br><span class="line">y2 = 0.8*exp(-0.5*x).*sin(10*x);</span><br><span class="line">[AX,H1,H2] = plotyy(x,y1,x,y2,&apos;plot&apos;); % 取坐标轴句柄AX和画图对象句柄H1\H2</span><br><span class="line">set(get(AX(1),&apos;Ylabel&apos;),&apos;String&apos;,&apos;Slow Decay&apos;) % 设置坐标轴标签</span><br><span class="line">set(get(AX(2),&apos;Ylabel&apos;),&apos;String&apos;,&apos;Fast Decay&apos;)</span><br><span class="line">xlabel(&apos;Time (\musec)&apos;)         % 设置x轴标签</span><br><span class="line">title(&apos;Multiple Decay Rates&apos;)   % 设置标题</span><br><span class="line">set(H1,&apos;LineStyle&apos;,&apos;--&apos;)        % 设置线型</span><br><span class="line">set(H2,&apos;LineStyle&apos;,&apos;:&apos;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>画 横线和竖线<br>画竖线   横轴从1到1 ，纵轴从0到1.<br>plot([1 1], [0 1],’–k’)</p>
-<p>loglog(Y)           表示 x、y坐标都是对数坐标系<br>semilogx(Y)     表示 x坐标轴是对数坐标系<br>semilogy(…)    表示y坐标轴是对数坐标系<br>plotyy                 有两个y坐标轴，一个在左边，一个在右边<br>例1:用方形标记创建一个简单的loglog.<br>解: 输入命令<br>x=logspace(-1,2);<br>loglog(x,exp(x),’-s’)</p>
-<p>%matlab画图可以存成文件，也可以用右键  copy 复制图像到word中，注意用直接copy的方式更加清晰。<br>一、加载数据到本地的变量（MATLAB里的变量都是是矩阵）：<br>可以采用load方式：<br>q1=load(‘./标准排队时延.txt’);     %加载文件  注意 laod 函数，括号里面有单引号，然后是文件路径<br>也可以采用图形界面的 import方式。</p>
-<p>注意画图时，横坐标和纵坐标的行列点数要对应。<br>例如画两条线，第一条是与x轴对应点数的向量，第二条只是一个直线。<br>那么不能直接将这个直线的值作为y轴的值，而应该通过ones函数，将它变为一个和x轴一样点数的向量。<br>否则，出来的图是正确的，但是legend的曲线标签会出错。<br>它会为直线的每一个点都设立一个legend，但是只显示曲线条数的legend，这样肯定会出错的。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/matlab/">matlab</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MATLAB/">MATLAB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/画图/">画图</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
     </div>
 
       
