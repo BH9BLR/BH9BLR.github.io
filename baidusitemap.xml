@@ -4,16 +4,14 @@
 
     
   <url>
-    <loc>http://BH9BLR.top/2016/05/28/linuxtextproc.html</loc>
-    <lastmod>2016-05-28T13:22:30.741Z</lastmod>
+    <loc>http://BH9BLR.top/2016/05/28/ns2resultproc.html</loc>
+    <lastmod>2016-05-28T15:17:44.664Z</lastmod>
     <data>
         <display>
-        <title>linux文档处理</title>
-        <pubTime>2016-05-28T13:02:37.000Z</pubTime>
+        <title>NS2结果直接写入文件</title>
+        <pubTime>2016-05-28T15:09:41.000Z</pubTime>
         
-        <tag>linux</tag>
-         
-        <tag>shell</tag>
+        <tag>NS2</tag>
          
          
            
@@ -24,13 +22,49 @@
     
   <url>
     <loc>http://BH9BLR.top/2016/05/28/ns2newclass.html</loc>
-    <lastmod>2016-05-28T13:15:25.154Z</lastmod>
+    <lastmod>2016-05-28T15:08:27.739Z</lastmod>
     <data>
         <display>
         <title>NS2中增加新类</title>
         <pubTime>2016-05-28T13:05:19.000Z</pubTime>
         
         <tag>NS2</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://BH9BLR.top/2016/05/28/ns2crosslayertcpmac.html</loc>
+    <lastmod>2016-05-28T15:07:45.076Z</lastmod>
+    <data>
+        <display>
+        <title>NS2跨层信息交互</title>
+        <pubTime>2016-05-28T14:59:45.000Z</pubTime>
+        
+        <tag>NS2</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://BH9BLR.top/2016/05/28/linuxtextproc.html</loc>
+    <lastmod>2016-05-28T13:22:30.741Z</lastmod>
+    <data>
+        <display>
+        <title>linux文档处理</title>
+        <pubTime>2016-05-28T13:02:37.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>shell</tag>
          
          
            

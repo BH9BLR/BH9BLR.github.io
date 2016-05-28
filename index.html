@@ -268,6 +268,132 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-ns2resultproc" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/28/ns2resultproc.html" class="article-date">
+      <time datetime="2016-05-28T15:09:41.000Z" itemprop="datePublished">2016-05-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/28/ns2resultproc.html">NS2结果直接写入文件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>NS2的结果统计有两种方式，第一种通过自带的trace功能，记录trace文件，然后通过awk进行处理。第二种是直接将仿真结果通过c++的文件操作在仿真中或者仿真结束后，将自定义统计的信息（实时的信息（例如随时间增长的瞬时吞吐量）以及整体仿真结果（例如平均吞吐量））写入文件。</p>
+<h1 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h1><p>在头文件中定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char tbuf[100]; </span><br><span class="line">FILE * record_file_;</span><br></pre></td></tr></table></figure></p>
+<p>在构造函数定义要写入的文件名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">strcpy(tbuf,“torecord”); </span><br><span class="line">   record_file_ = fopen(tbuf,&quot;a&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>在函数体中随时将要记录的值写入文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">char resultbuf[500];</span><br><span class="line">sprintf(resultbuf,&quot;%f\n&quot;,mac_rate); </span><br><span class="line"> fwrite(resultbuf,strlen(resultbuf),1,record_file_);</span><br></pre></td></tr></table></figure></p>
+<p>仿真结束后关闭文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fclose(record_file_);</span><br></pre></td></tr></table></figure></p>
+<h1 id="直接printf到result文件，然后使用grep和awk进行收集"><a href="#直接printf到result文件，然后使用grep和awk进行收集" class="headerlink" title="直接printf到result文件，然后使用grep和awk进行收集"></a>直接printf到result文件，然后使用grep和awk进行收集</h1><p>在统计中使用printf语句按格式进行打印<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int result;</span><br><span class="line">printf(&quot;lable\t%d\n&quot;,result);</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://BH9BLR.top/2016/05/28/linuxtextproc.html">使用grep等命令进行提取</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NS2/">NS2</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ns2crosslayertcpmac" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/28/ns2crosslayertcpmac.html" class="article-date">
+      <time datetime="2016-05-28T14:59:45.000Z" itemprop="datePublished">2016-05-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/28/ns2crosslayertcpmac.html">NS2跨层信息交互</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>首先在TCP中加入一个MAC对象的指针，然后在command中加入一个关于设置这个指针的函数，在运行脚本中建立tcp对象后执行绑定命令，就可以将这个节点的tcp和这个节点的mac层联系到一起，进而可以调用mac层的函数。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NS2/">NS2</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2016/05/28/ns2crosslayertcpmac.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-ns2newclass" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -295,7 +421,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="1、建立一个同名的h文件和cc文件"><a href="#1、建立一个同名的h文件和cc文件" class="headerlink" title="1、建立一个同名的h文件和cc文件"></a>1、建立一个同名的h文件和cc文件</h1><p>例如在mac文件夹下建立  mac_ofdma_ap.h  和 mac_ofdma_ap.cc<br>
+              <h1 id="建立一个同名的h文件和cc文件"><a href="#建立一个同名的h文件和cc文件" class="headerlink" title="建立一个同名的h文件和cc文件"></a>建立一个同名的h文件和cc文件</h1><p>例如在mac文件夹下建立  mac_ofdma_ap.h  和 mac_ofdma_ap.cc<br>
           
       
     </div>
