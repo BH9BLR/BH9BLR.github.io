@@ -6,16 +6,16 @@
   
   <title>linux shell 编程注意事项 | BH9BLR Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="变量运算要想引用某个变量做为一个表达式时，需要用双括号，并且在最外层加 $.1CONFIG3=&amp;quot;-play_rate $(($ii*100))&amp;quot;">
+  <meta name="description" content="摘要介绍linux shell编程的主要注意事项，满足简单脚本处理的需求。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux shell 编程注意事项">
 <meta property="og:url" content="http://BH9BLR.top/2016/05/28/linuxshellissue.html">
 <meta property="og:site_name" content="BH9BLR Home">
-<meta property="og:description" content="变量运算要想引用某个变量做为一个表达式时，需要用双括号，并且在最外层加 $.1CONFIG3=&amp;quot;-play_rate $(($ii*100))&amp;quot;">
-<meta property="og:updated_time" content="2016-05-28T13:00:11.983Z">
+<meta property="og:description" content="摘要介绍linux shell编程的主要注意事项，满足简单脚本处理的需求。">
+<meta property="og:updated_time" content="2016-05-29T08:57:44.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux shell 编程注意事项">
-<meta name="twitter:description" content="变量运算要想引用某个变量做为一个表达式时，需要用双括号，并且在最外层加 $.1CONFIG3=&amp;quot;-play_rate $(($ii*100))&amp;quot;">
+<meta name="twitter:description" content="摘要介绍linux shell编程的主要注意事项，满足简单脚本处理的需求。">
   
     <link rel="alternative" href="/atom.xml" title="BH9BLR Home" type="application/atom+xml">
   
@@ -292,8 +292,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="变量运算"><a href="#变量运算" class="headerlink" title="变量运算"></a>变量运算</h1><p>要想引用某个变量做为一个表达式时，需要用双括号，并且在最外层加 $.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFIG3=&quot;-play_rate $(($ii*100))&quot;</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>介绍linux shell编程的主要注意事项，满足简单脚本处理的需求。<br><a id="more"></a></p>
+<h1 id="变量运算"><a href="#变量运算" class="headerlink" title="变量运算"></a>变量运算</h1><p>要想引用某个变量做为一个表达式时，需要用双括号，并且在最外层加 $.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CONFIG3=&quot;-play_rate $(($ii*100))&quot;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash  </span><br><span class="line">#执行数值运算时，第一行必须是/bin/bash，而不是/bin/sh</span><br><span class="line">if [ $# -lt 1 ] </span><br><span class="line">then </span><br><span class="line">echo &quot;Usage:*.sh k&quot; </span><br><span class="line">exit </span><br><span class="line">fi </span><br><span class="line">num=$[$1*$1*$1/4] </span><br><span class="line">for((i=0;i&lt;10;i++)</span><br><span class="line">do </span><br><span class="line">echo$i </span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 <h1 id="变量赋值"><a href="#变量赋值" class="headerlink" title="变量赋值"></a>变量赋值</h1><p>注意：<br>1.等号右边不能有空格<br>2.等号右边不用加符号$ </p>
 <p>3.作为等号右边角色是（取变量）要加符号$</p>
@@ -314,7 +314,7 @@
         <p><span>本文标题:</span><a href="/2016/05/28/linuxshellissue.html">linux shell 编程注意事项</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">BH9BLR</a></p>
         <p><span>发布时间:</span>2016-05-28, 20:58:04</p>
-        <p><span>最后更新:</span>2016-05-28, 21:00:11</p>
+        <p><span>最后更新:</span>2016-05-29, 16:57:44</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/05/28/linuxshellissue.html" title="linux shell 编程注意事项">http://BH9BLR.top/2016/05/28/linuxshellissue.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://BH9BLR.top/2016/05/28/linuxshellissue.html　　作者: BH9BLR" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -349,7 +349,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量运算"><span class="toc-number">1.</span> <span class="toc-text">变量运算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量赋值"><span class="toc-number">2.</span> <span class="toc-text">变量赋值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#for循环变量设置"><span class="toc-number">3.</span> <span class="toc-text">for循环变量设置</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量运算"><span class="toc-number">2.</span> <span class="toc-text">变量运算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量赋值"><span class="toc-number">3.</span> <span class="toc-text">变量赋值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#for循环变量设置"><span class="toc-number">4.</span> <span class="toc-text">for循环变量设置</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
