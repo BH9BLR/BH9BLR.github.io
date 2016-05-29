@@ -4,18 +4,20 @@
   
   <meta charset="utf-8">
   
-  <title>NS2跨层信息交互 | BH9BLR Home</title>
+  <title>Android adb工具使用 | BH9BLR Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="思路：首先在TCP中加入一个MAC对象的指针，然后在command中加入一个关于设置这个指针的函数，在运行脚本中建立tcp对象后执行绑定命令，就可以将这个节点的tcp和这个节点的mac层联系到一起，进而可以调用mac层的函数。">
+  <meta name="description" content="摘要在使用android的产品中，有时需要直接操作android的文件系统，例如替换系统apk，这是无法通过手机助手之类的进行处理的，只能通过adb工具实现。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NS2跨层信息交互">
-<meta property="og:url" content="http://BH9BLR.top/2016/05/28/ns2crosslayertcpmac.html">
+<meta property="og:title" content="Android adb工具使用">
+<meta property="og:url" content="http://BH9BLR.top/2016/05/29/androidadb.html">
 <meta property="og:site_name" content="BH9BLR Home">
-<meta property="og:description" content="思路：首先在TCP中加入一个MAC对象的指针，然后在command中加入一个关于设置这个指针的函数，在运行脚本中建立tcp对象后执行绑定命令，就可以将这个节点的tcp和这个节点的mac层联系到一起，进而可以调用mac层的函数。">
-<meta property="og:updated_time" content="2016-05-28T15:07:45.076Z">
+<meta property="og:description" content="摘要在使用android的产品中，有时需要直接操作android的文件系统，例如替换系统apk，这是无法通过手机助手之类的进行处理的，只能通过adb工具实现。">
+<meta property="og:image" content="http://7xurxb.com1.z0.glb.clouddn.com/adbshell001.png">
+<meta property="og:updated_time" content="2016-05-29T08:24:04.318Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NS2跨层信息交互">
-<meta name="twitter:description" content="思路：首先在TCP中加入一个MAC对象的指针，然后在command中加入一个关于设置这个指针的函数，在运行脚本中建立tcp对象后执行绑定命令，就可以将这个节点的tcp和这个节点的mac层联系到一起，进而可以调用mac层的函数。">
+<meta name="twitter:title" content="Android adb工具使用">
+<meta name="twitter:description" content="摘要在使用android的产品中，有时需要直接操作android的文件系统，例如替换系统apk，这是无法通过手机助手之类的进行处理的，只能通过adb工具实现。">
+<meta name="twitter:image" content="http://7xurxb.com1.z0.glb.clouddn.com/adbshell001.png">
   
     <link rel="alternative" href="/atom.xml" title="BH9BLR Home" type="application/atom+xml">
   
@@ -254,11 +256,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-ns2crosslayertcpmac" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-androidadb" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/28/ns2crosslayertcpmac.html" class="article-date">
-      <time datetime="2016-05-28T14:59:45.000Z" itemprop="datePublished">2016-05-28</time>
+      <a href="/2016/05/29/androidadb.html" class="article-date">
+      <time datetime="2016-05-29T04:30:01.000Z" itemprop="datePublished">2016-05-29</time>
 </a>
     </div>
   
@@ -271,7 +273,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      NS2跨层信息交互
+      Android adb工具使用
     </h1>
   
 
@@ -279,10 +281,14 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NS2/">NS2</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/adb/">adb</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -292,13 +298,33 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>首先在TCP中加入一个MAC对象的指针，然后在command中加入一个关于设置这个指针的函数，在运行脚本中建立tcp对象后执行绑定命令，就可以将这个节点的tcp和这个节点的mac层联系到一起，进而可以调用mac层的函数。<br><a id="more"></a></p>
-<h2 id="引用和定义"><a href="#引用和定义" class="headerlink" title="引用和定义"></a>引用和定义</h2><p>在tcp.h中增加引用头文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;mac/mac-802_11Ext.h&quot;</span><br></pre></td></tr></table></figure></p>
-<p>同时定义一个Mac802_11Ext类型的指针：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mac802_11Ext * mymac;</span><br></pre></td></tr></table></figure></p>
-<h2 id="修改-tcp-cc的command-函数-增加以下代码"><a href="#修改-tcp-cc的command-函数-增加以下代码" class="headerlink" title="修改 tcp.cc的command()函数,增加以下代码"></a>修改 tcp.cc的command()函数,增加以下代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">int</span><br><span class="line">TCP::command(int argc, const char*const* argv) &#123;</span><br><span class="line">...</span><br><span class="line">else if(argc == 3) &#123;</span><br><span class="line">      if(strcmp(argv[1], &quot;index&quot;) == 0) &#123;</span><br><span class="line">         index = atoi(argv[2]);</span><br><span class="line">         return TCL_OK;</span><br><span class="line">      &#125;</span><br><span class="line">      else if (strcmp(argv[1], &quot;set-mac&quot;) == 0)</span><br><span class="line">     &#123;</span><br><span class="line">          mymac = (Mac802_11Ext *) TclObject::lookup(argv[2]);</span><br><span class="line">          if (mymac == 0)</span><br><span class="line">           &#123;</span><br><span class="line">                fprintf(stderr, &quot;MESPAgent: %s lookup %s failed.\n&quot;, argv[1], argv[2]);</span><br><span class="line">                return TCL_ERROR;</span><br><span class="line">           &#125;</span><br><span class="line">           else</span><br><span class="line">          &#123;</span><br><span class="line">               return TCL_OK;</span><br><span class="line">          &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="在-tcl-脚本中初始化"><a href="#在-tcl-脚本中初始化" class="headerlink" title="在 tcl 脚本中初始化"></a>在 tcl 脚本中初始化</h2><p>TCP进行跨层设计时，tcl中的定义必需放在tcp绑定节点之后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set tcp [new Agent/TCP]</span><br><span class="line">$ns_ attach-agent $node_(0) $tcp</span><br><span class="line">$tcp set-mac [$node_(0) set mac_(0)]          //tcp访问mac层信息；</span><br><span class="line">//或者使用这个函数来获取mac</span><br><span class="line"> set mymac [$node_($i) getMac 0]</span><br></pre></td></tr></table></figure>
-<h2 id="在tcp中通过-mymac指针访问mac对象中的相关信息。"><a href="#在tcp中通过-mymac指针访问mac对象中的相关信息。" class="headerlink" title="在tcp中通过 mymac指针访问mac对象中的相关信息。"></a>在tcp中通过 mymac指针访问mac对象中的相关信息。</h2>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>在使用android的产品中，有时需要直接操作android的文件系统，例如替换系统apk，这是无法通过手机助手之类的进行处理的，只能通过adb工具实现。<br><a id="more"></a></p>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p>使用的工具为“adbtools”或者“adb工具箱”，可在网上自行搜索下载。下载后主要使用程序为其中的adb.exe。</p>
+<p>在使用时，可以将adb.exe的路径加入环境变量，也可以直接在终端中切换到其目录工作。</p>
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p>我们主要用的命令包括两个：adb shell 以及adb push</p>
+<h2 id="adb-shell"><a href="#adb-shell" class="headerlink" title="adb shell"></a>adb shell</h2><p>通过adb shell命令，可以直接将进入android的根目录，如下图所示：</p>
+<p><img src="http://7xurxb.com1.z0.glb.clouddn.com/adbshell001.png" alt="adb shell 操作"></p>
+<p>根据android的版本不同，其根目录的结构也不同。例如在Android4.04中，主要apk安装在/system/app/目录下，而在Android4.4中，系统自带的apk被转移到/system/priv-app/目录下。<br>另外，这些目录一般也是受保护的，用户无法对其直接进行操作。</p>
+<ul>
+<li><p>提升root权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ su -</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改文件夹属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd system</span><br><span class="line">$ chmod 777 priv-app</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除某个系统apk</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd priv-app</span><br><span class="line">$ rm SystemUI.apk  //删除后用自己的SystemUI.apk进行替换 </span><br><span class="line">$ rm Launcher2.apk //删除系统的启动程序，慎用</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>退出Android系统</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ exit</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="adb-push"><a href="#adb-push" class="headerlink" title="adb push"></a>adb push</h2><p>在上一小节，我们通过adb shell修改了Android文件系统priv-app文件夹的属性，并删除了其中的SystemUI.apk，下面通过adb push命令将我们自己的SystemUI.apk传到文件系统。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb push SystemUI.apk /system/priv-app/SystemUI.apk</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>对于Android4.04来说，SystemUI.apk仍然安装在/system/app/目录下。</li>
+<li>对于部分文件系统，adb push仍然会提示权限不足，这时可以先将自己的apk push到/sdcard 目录（该目录可以通过adb push读写）下，然后再通过adb shell复制到/system/priv-app/目录下。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ adb push SystemUI.apk /sdcatd/SystemUI.apk</span><br><span class="line">$ adb shell</span><br><span class="line">$ cp /sdcatd/SystemUI.apk /system/priv-app/SystemUI.apk</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
     
@@ -306,13 +332,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/05/28/ns2crosslayertcpmac.html">NS2跨层信息交互</a></p>
+        <p><span>本文标题:</span><a href="/2016/05/29/androidadb.html">Android adb工具使用</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">BH9BLR</a></p>
-        <p><span>发布时间:</span>2016-05-28, 22:59:45</p>
-        <p><span>最后更新:</span>2016-05-28, 23:07:45</p>
+        <p><span>发布时间:</span>2016-05-29, 12:30:01</p>
+        <p><span>最后更新:</span>2016-05-29, 16:24:04</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/28/ns2crosslayertcpmac.html" title="NS2跨层信息交互">http://BH9BLR.top/2016/05/28/ns2crosslayertcpmac.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://BH9BLR.top/2016/05/28/ns2crosslayertcpmac.html　　作者: BH9BLR" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/29/androidadb.html" title="Android adb工具使用">http://BH9BLR.top/2016/05/29/androidadb.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://BH9BLR.top/2016/05/29/androidadb.html　　作者: BH9BLR" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -324,16 +350,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/05/28/ns2resultproc.html">
-                    NS2仿真结果处理
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/05/28/ns2newclass.html">
-                    NS2中增加新类
+                <a href="/2016/05/29/androidnobar.html">
+                    Android 全屏显示
                 </a>
             </div>
         
@@ -344,7 +364,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#思路："><span class="toc-number">1.</span> <span class="toc-text">思路：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#引用和定义"><span class="toc-number">1.1.</span> <span class="toc-text">引用和定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改-tcp-cc的command-函数-增加以下代码"><span class="toc-number">1.2.</span> <span class="toc-text">修改 tcp.cc的command()函数,增加以下代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-tcl-脚本中初始化"><span class="toc-number">1.3.</span> <span class="toc-text">在 tcl 脚本中初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在tcp中通过-mymac指针访问mac对象中的相关信息。"><span class="toc-number">1.4.</span> <span class="toc-text">在tcp中通过 mymac指针访问mac对象中的相关信息。</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#工具"><span class="toc-number">2.</span> <span class="toc-text">工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#命令"><span class="toc-number">3.</span> <span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#adb-shell"><span class="toc-number">3.1.</span> <span class="toc-text">adb shell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#adb-push"><span class="toc-number">3.2.</span> <span class="toc-text">adb push</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -401,7 +421,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"NS2跨层信息交互　| BH9BLR Home　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Android adb工具使用　| BH9BLR Home　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -417,7 +437,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/05/28/ns2crosslayertcpmac.html" data-title="NS2跨层信息交互" data-url="http://BH9BLR.top/2016/05/28/ns2crosslayertcpmac.html"></div>
+    <div class="ds-thread" data-thread-key="2016/05/29/androidadb.html" data-title="Android adb工具使用" data-url="http://BH9BLR.top/2016/05/29/androidadb.html"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -441,15 +461,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/05/28/ns2resultproc.html" title="上一篇: NS2仿真结果处理">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/05/28/ns2newclass.html" title="下一篇: NS2中增加新类">
+            <a href="/2016/05/29/androidnobar.html" title="下一篇: Android 全屏显示">
                 <i class="fa fa-angle-right"></i>
             </a>
         

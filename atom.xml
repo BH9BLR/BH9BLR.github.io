@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://BH9BLR.top/"/>
-  <updated>2016-05-28T15:33:18.188Z</updated>
+  <updated>2016-05-29T08:24:04.318Z</updated>
   <id>http://BH9BLR.top/</id>
   
   <author>
@@ -14,6 +14,87 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android adb工具使用</title>
+    <link href="http://BH9BLR.top/2016/05/29/androidadb.html"/>
+    <id>http://BH9BLR.top/2016/05/29/androidadb.html</id>
+    <published>2016-05-29T04:30:01.000Z</published>
+    <updated>2016-05-29T08:24:04.318Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;在使用android的产品中，有时需要直接操作android的文件系统，例如替换系统apk，这是无法通过手机助手之类的进行处理的，只能通过adb工具实现。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h1&gt;&lt;p&gt;使用的工具为“adbtools”或者“adb工具箱”，可在网上自行搜索下载。下载后主要使用程序为其中的adb.exe。&lt;/p&gt;
+&lt;p&gt;在使用时，可以将adb.exe的路径加入环境变量，也可以直接在终端中切换到其目录工作。&lt;/p&gt;
+&lt;h1 id=&quot;命令&quot;&gt;&lt;a href=&quot;#命令&quot; class=&quot;headerlink&quot; title=&quot;命令&quot;&gt;&lt;/a&gt;命令&lt;/h1&gt;&lt;p&gt;我们主要用的命令包括两个：adb shell 以及adb push&lt;/p&gt;
+&lt;h2 id=&quot;adb-shell&quot;&gt;&lt;a href=&quot;#adb-shell&quot; class=&quot;headerlink&quot; title=&quot;adb shell&quot;&gt;&lt;/a&gt;adb shell&lt;/h2&gt;&lt;p&gt;通过adb shell命令，可以直接将进入android的根目录，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xurxb.com1.z0.glb.clouddn.com/adbshell001.png&quot; alt=&quot;adb shell 操作&quot;&gt;&lt;/p&gt;
+&lt;p&gt;根据android的版本不同，其根目录的结构也不同。例如在Android4.04中，主要apk安装在/system/app/目录下，而在Android4.4中，系统自带的apk被转移到/system/priv-app/目录下。&lt;br&gt;另外，这些目录一般也是受保护的，用户无法对其直接进行操作。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;提升root权限&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ su -&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;修改文件夹属性&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ cd system&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ chmod 777 priv-app&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;删除某个系统apk&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ cd priv-app&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ rm SystemUI.apk  //删除后用自己的SystemUI.apk进行替换 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ rm Launcher2.apk //删除系统的启动程序，慎用&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;退出Android系统&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ exit&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;adb-push&quot;&gt;&lt;a href=&quot;#adb-push&quot; class=&quot;headerlink&quot; title=&quot;adb push&quot;&gt;&lt;/a&gt;adb push&lt;/h2&gt;&lt;p&gt;在上一小节，我们通过adb shell修改了Android文件系统priv-app文件夹的属性，并删除了其中的SystemUI.apk，下面通过adb push命令将我们自己的SystemUI.apk传到文件系统。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ adb push SystemUI.apk /system/priv-app/SystemUI.apk&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于Android4.04来说，SystemUI.apk仍然安装在/system/app/目录下。&lt;/li&gt;
+&lt;li&gt;对于部分文件系统，adb push仍然会提示权限不足，这时可以先将自己的apk push到/sdcard 目录（该目录可以通过adb push读写）下，然后再通过adb shell复制到/system/priv-app/目录下。&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ adb push SystemUI.apk /sdcatd/SystemUI.apk&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ adb shell&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ cp /sdcatd/SystemUI.apk /system/priv-app/SystemUI.apk&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;在使用android的产品中，有时需要直接操作android的文件系统，例如替换系统apk，这是无法通过手机助手之类的进行处理的，只能通过adb工具实现。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://BH9BLR.top/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://BH9BLR.top/tags/Android/"/>
+    
+      <category term="adb" scheme="http://BH9BLR.top/tags/adb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android 全屏显示</title>
+    <link href="http://BH9BLR.top/2016/05/29/androidnobar.html"/>
+    <id>http://BH9BLR.top/2016/05/29/androidnobar.html</id>
+    <published>2016-05-29T04:28:20.000Z</published>
+    <updated>2016-05-29T08:27:40.622Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;在android程序中，有时需要将app进行全屏显示，即隐藏导航栏以及标题栏。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;在代码中进行全屏设置&quot;&gt;&lt;a href=&quot;#在代码中进行全屏设置&quot; class=&quot;headerlink&quot; title=&quot;在代码中进行全屏设置&quot;&gt;&lt;/a&gt;在代码中进行全屏设置&lt;/h1&gt;&lt;h2 id=&quot;在app第一页面的onCreate函数中使用如下代码：&quot;&gt;&lt;a href=&quot;#在app第一页面的onCreate函数中使用如下代码：&quot; class=&quot;headerlink&quot; title=&quot;在app第一页面的onCreate函数中使用如下代码：&quot;&gt;&lt;/a&gt;在app第一页面的onCreate函数中使用如下代码：&lt;/h2&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Bundle savedInstanceState)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onCreate(savedInstanceState);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;comment&quot;&gt;//去掉标题栏&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.requestWindowFeature(Window.FEATURE_NO_TITLE);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//去掉信息栏&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        WindowManager.LayoutParams.FLAG_FULLSCREEN);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//开机不自动锁屏&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        getWindow().setFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD,WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;comment&quot;&gt;//在之后设置ContentView&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		setContentView(R.layout.main);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;在AndroidManifest-xml文件进行配置&quot;&gt;&lt;a href=&quot;#在AndroidManifest-xml文件进行配置&quot; class=&quot;headerlink&quot; title=&quot;在AndroidManifest.xml文件进行配置&quot;&gt;&lt;/a&gt;在AndroidManifest.xml文件进行配置&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;application&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        android:theme=&amp;quot;@android:style/heme.NoTitleBar.Fullscreen&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;去除导航栏&quot;&gt;&lt;a href=&quot;#去除导航栏&quot; class=&quot;headerlink&quot; title=&quot;去除导航栏&quot;&gt;&lt;/a&gt;去除导航栏&lt;/h1&gt;&lt;p&gt;通过上述代码设置，可以隐藏标题栏，但是状态栏（即页面下方的“返回键，Home键”等）仍然存在，需要修改系统的SystemUI.apk实现。&lt;/p&gt;
+&lt;p&gt;具体修改文件为android文件系统的：&lt;br&gt;frameworks/base/packages/SystemUI/res/layout/status_bar.xml&lt;br&gt;在其中加入android:visibility=”invisible”&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;com.android.systemui.statusbar.StatusBarView&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    android:visibility=&amp;quot;invisible&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;修改后进行编译：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ source build/envsetup.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ mmm frameworks/base/packages/SystemUI/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;编译完成后会在生成目录中找到新的SystemUI.apk文件。&lt;br&gt;然后通过&lt;a href=&quot;http://10.12.36.22:4000/2016/05/29/androidadb.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Adb工具&lt;/a&gt;，对原文件系统的工具进行替换。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;在android程序中，有时需要将app进行全屏显示，即隐藏导航栏以及标题栏。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://BH9BLR.top/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://BH9BLR.top/tags/Android/"/>
+    
+      <category term="系统美化" scheme="http://BH9BLR.top/tags/%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>为知笔记自定义九宫格日记模板</title>
